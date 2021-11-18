@@ -74,4 +74,48 @@ function functionWithArgs(param1,param2){
     console.log(param1 + param2);
 }
 functionWithArgs(2,4);
-//Passing Values to Functions with Arguments
+//Passing Values to Functions with Arguments 
+//Return a Value from a Function with Return
+function timesFive(param){
+    return param*5;
+  }
+  const answer = timesFive(5);
+  //Variables which are defined outside of a function block have Global scope.Variables which are declared without the let or const keywords are automatically created in the global scope.Always use let or const keyword.
+  //local variables have only scope inside the function & cannot be called outside it
+  //Global vs. Local Scope in Functions
+  const someVar = "Head";
+  function myFun(){
+      const someVar = "Toe";
+      return someVar;
+  }
+  myFun();
+  //It is possible to have both local and global variables with the same name. When you do this, the local variable takes precedence over the global variable.
+  //The function myFun will return the string Toe because the local version of the variable is present.
+  let sum101 = 0;
+
+  function addSum(num) {
+    sum101 = sum101 + num;
+  }
+  
+  addSum(3);
+  //addSum is a function without a return statement. The function will change the global sum variable but the returned value of the function is undefined.
+  //In the case that the function doesn't have a return statement, when you call it, the function processes the inner code but the returned value is undefined.
+// Assignment with a Returned Value
+let processed = 0;
+function processArg(num) {
+  return (num + 3) / 5;
+}
+processed = processArg(7);
+console.log(processed);
+//it will print 2
+//Stand-In-Line (Understanding Queue Data Structure)
+function nextInLine(arr,item){
+    arr.push(item);
+    let num = arr.shift();
+    return num
+}
+const testArr = [1,2,3,4,5];
+console.log("Before: " + JSON.stringify(testArr));
+console.log(nextInLine(testArr,6));
+console.log("After: " + JSON.stringify(testArr));
+//if statements are used to make decisions in code.
