@@ -119,3 +119,106 @@ console.log("Before: " + JSON.stringify(testArr));
 console.log(nextInLine(testArr,6));
 console.log("After: " + JSON.stringify(testArr));
 //if statements are used to make decisions in code.
+function test (myCondition) {
+  if (myCondition) {
+    return "It was true";
+  }
+  return "It was false";
+}
+
+test(true);
+//In JavaScript, you can determine the type of a variable or a value with the typeof operator, as follows:
+//typeof 3 returns the string number, and typeof '3' returns the string string.
+function testNotEqual(val){
+  if (val != 99){
+    return "Not Equal"
+  }
+  return "Equal"
+}
+testNotEqual(98);
+/*
+1 !=  2
+1 != "1"
+1 != '1'
+1 != true
+0 != false 
+In order, these expressions would evaluate to true, false, false, false, and false.
+*/
+ function testOperator1(num){
+    if (num > 5){
+      if (num < 10) {
+        return "Yes";
+      }
+    }
+    return "False";
+ }
+ testOperator1(7);
+ //Above function can also be written as :
+ function testOperator2(num){
+   if (num > 5 && num < 10) {
+     return "Yes";
+   }
+   return "False" ;
+ }
+ testOperator2(7);
+ //else if function
+ function testelseif (num) {
+   if (num > 10){
+     return "bigger than 10"
+   }
+   else if (num < 10){
+     return "less then 10"
+   }
+   else {
+     return "Equal to 10"
+   }
+ }
+ console.log(testelseif(9)); //Order is important in if, else if statements.
+ //The switch statement is used to perform different actions based on different conditions.
+function   caseInSwitch(val) {
+ let answer ="";
+   switch(val){
+     case 1:
+      answer = "alpha";
+      break;
+     case 2:
+       answer = "beta";
+       break;
+     case 3:
+       answer = "gamma";
+       break;
+     default:
+       answer = "delta";    
+   }
+   return answer
+ }
+ caseInSwitch(1);
+ function removebreak(val){
+   let answer = "";
+   switch(val){
+     case 1:
+     case 2:
+     case 3:
+       answer = "Low";
+       break;
+     case 4:
+     case 5:
+     case 6:
+       answer = "High";
+       break;  
+   }
+   return answer
+ }
+ removebreak(4);
+ //Short code for true & false
+ function isLess(a,b){
+   return a < b;
+ }
+ isLess(10,16);
+ //When a return statement is reached, the execution of the current function stops and control returns to the calling location.
+ const myDog = {
+    "name": "Max",
+    "legs": 4,
+    "tail": 1,
+    "friends": ["Suzzy","Percy","Robert"]
+ };
