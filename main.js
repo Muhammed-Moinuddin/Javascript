@@ -220,5 +220,41 @@ function   caseInSwitch(val) {
     "name": "Max",
     "legs": 4,
     "tail": 1,
-    "friends": ["Suzzy","Percy","Robert"]
+    "my friends": ["Suzzy","Percy","Robert"]
  };
+ const myDog2 = {
+   name: "Ravi",
+   legs: 6,
+   tail: 2,
+   "his friends": ["Champ" , "hero"]
+ }
+ testDog1 = myDog.name;
+ testDog2 = myDog["my friends"];
+ testDog3 = myDog[1];
+
+ const dogs = {
+   Fido: "Mutt",
+   Hunter: "Doberman",
+   Snoopie: "Beagle",
+ }
+ const goodDog = "Hunter";
+ const doggy = dogs[goodDog];
+ console.log(doggy);
+ 
+ dogs.Fido = "Happy Mutt";
+ dogs[Snoopie] = "Happy Beagle";
+//Using Variable & accessing Objects
+ const someObj = {
+    propName: "John"
+ };
+
+ function propPrefix(var1){
+    const s = "Name";
+    return s + var1
+ };
+
+ const someProp = propPrefix("prop");
+ console.log(someObj[someProp]);
+
+ //You can add new properties to existing JavaScript objects the same way you would modify them.
+someObj.propAge = 26;
