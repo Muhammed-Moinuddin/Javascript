@@ -243,6 +243,7 @@ function   caseInSwitch(val) {
  
  dogs.Fido = "Happy Mutt";
  dogs[Snoopie] = "Happy Beagle";
+ delete dogs.Fido;
 //Using Variable & accessing Objects
  const someObj = {
     propName: "John"
@@ -258,3 +259,32 @@ function   caseInSwitch(val) {
 
  //You can add new properties to existing JavaScript objects the same way you would modify them.
 someObj.propAge = 26;
+
+//Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to lookup values rather than a switch statement or an if/else chain. This is most useful when you know that your input data is limited to a certain range.
+function phoneticLookup(val){
+  const lookup = {
+    1: "A",
+    2: "B",
+    3: "C",
+    4: "D",
+    5: "E"
+  }
+  let result = lookup[val];
+  return result
+}
+phoneticLookup(3);
+//We can use the .hasOwnProperty(propname) method of objects to determine if that object has the given property name. .hasOwnProperty() returns true or false if the property is found or not.
+function checkObj(obj,checkProp) {
+  if (obj.hasOwnProperty(checkProp)) {
+    return obj[checkProp];
+  } 
+  else {
+    return "Not Found"
+  }
+}
+const obj = {
+  girl: "generally long hair",
+  boy: "generally short hair",
+  checkProp: "Moin the best dev"
+};
+console.log(checkObj);
