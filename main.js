@@ -397,6 +397,20 @@ const myArray3 = [];
 for(let i3 = 1; i3 <= 5; i3++){
   myArray.push(i3);
 }
+
+const myArray4 = [];
+for (let i = 1; i < 10; i += 2) {
+  myArray4.push(i4);
+};
                                                                                                                                                                                                                             
+const myArray5 = [];
+for (let i5 = 9 ; i5 > 0 ; i5 -= 2) {
+  myArray5.push(i5)
+};
 
-
+const myArray6 = [2,3,4,5,6];
+let total = 0;
+for (let i = 0 ; i < 5 ; i++) {
+  total = total + myArray6[i];
+};
+console.log(total);
