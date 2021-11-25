@@ -274,17 +274,129 @@ function phoneticLookup(val){
 }
 phoneticLookup(3);
 //We can use the .hasOwnProperty(propname) method of objects to determine if that object has the given property name. .hasOwnProperty() returns true or false if the property is found or not.
-function checkObj(obj,checkProp) {
+function checkObj(obj, checkProp) {
+  // Only change code below this line
   if (obj.hasOwnProperty(checkProp)) {
     return obj[checkProp];
-  } 
+  }
   else {
     return "Not Found"
   }
+  // Only change code above this line
 }
 const obj = {
   girl: "generally long hair",
   boy: "generally short hair",
   checkProp: "Moin the best dev"
 };
-console.log(checkObj);
+console.log(checkObj(obj, "boy"));
+
+const myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+  }
+]
+//Nested Object & how to access the value in it.
+const myStorage = {
+  "car":{
+    "inside":{
+      "glove box" : "maps",
+      "passenger seat" : "crumbs"
+    },
+    "outside": {
+      "trunk": "Jack"
+    }
+  }
+};
+
+const gloveBoxContent = myStorage.car.inside["glove box"];
+//Nested Array & how to access value in it.
+const myPlants = [
+  {
+    type : "flowers",
+    list: [
+      "Rose",
+      "Lotus",
+      "Jasmine"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "Teak",
+      "Silver Oak",
+      "Drumstick tree"
+    ]
+  }
+];
+const myFavouritePlant = myPlants[1].list[2];
+
+const recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+
+// Only change code below this line
+function updateRecords(records, id, prop, value) {
+  if (prop != "tracks" && value != ""){
+    records[id][prop] = value;
+  }
+  else if (prop == "tracks" && records[id].hasOwnProperty("tracks") == false){
+    records[id][prop] = [value];
+  }
+  else if (prop == "tracks" && value != ""){
+    records[id][prop].push(value);
+  }
+  else if (value == ""){
+    delete records[id][prop];
+  }
+  return records;
+}
+
+updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+//Loops
+const myArray = [];
+let i = 0;
+while (i<5){
+  myArray.push(i);
+  i++
+};
+console.log(myArray);
+//Iteration with while (it runs while a specified condition is true and stops once that condition is no longer true.) 
+const myArray2 = [];
+let i2 = 5;
+while (i2>=0){
+  myArray2.push(i2);
+  i2--;
+}
+//Iteration with For Loop ( it runs for a specific number of times. )
+const myArray3 = [];
+for(let i3 = 1; i3 <= 5; i3++){
+  myArray.push(i3);
+}
+                                                                                                                                                                                                                            
+
+
