@@ -414,3 +414,21 @@ for (let i = 0 ; i < 5 ; i++) {
   total = total + myArray6[i];
 };
 console.log(total);
+//  do...while Loop
+// In do...while loop, the code will run once without giving importance to the condition & after one cycle/loop , the code will run by giving importance to the condition. It's further explain below  
+//First We'll check a normal while loop.
+const checkArray = [];
+let z = 5;
+while (z < 5) {
+  checkArray.push(z)
+  z++
+};
+//Above code will not run as the condition is not true. Ans : checkArray = []
+const checkArray2 = [];
+let z2 = 5;
+do {
+checkArray.push(z2);
+z2++ ;
+}
+while (z2 < 5);
+//Above code will run jsut once even if the condition is not true because it's a do...while. Ans : checkArray = [5]
