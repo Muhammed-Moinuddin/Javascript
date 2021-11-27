@@ -432,3 +432,26 @@ z2++ ;
 }
 while (z2 < 5);
 //Above code will run jsut once even if the condition is not true because it's a do...while. Ans : checkArray = [5]
+//////
+//Recursion is the concept that a function can be expressed in terms of itself. 
+//Normal Loop
+arr1 = [1,2,3,4,5,6,7,8,9];
+function multiply(arr1,n){
+  let product = 1;
+  for (let i = 0 ; i < n ; i++) {
+    product = product * arr1[i];
+  }
+  return product;
+}
+//Recursion (Function itself becomes a loop)
+function multiply1(arr1,n){
+  if (n <= 0) {
+    return 1;
+  }
+  else {
+    return multiply1(arr1 , n-1) * arr[n-1];
+  }
+}
+//Math.random() always returns a number lower than 1.
+//Math.floor() is use to round the number down to the nearest whole number.
+return Math.floor(Math.random() * 10);
