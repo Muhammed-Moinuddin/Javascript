@@ -454,4 +454,91 @@ function multiply1(arr1,n){
 }
 //Math.random() always returns a number lower than 1.
 //Math.floor() is use to round the number down to the nearest whole number.
-return Math.floor(Math.random() * 10);
+Math.floor(Math.random() * 10);
+let y = "56";
+let x = parseInt(y);
+//The parseInt() function parses a string and returns an integer. It takes a second argument for the radix, which specifies the base of the number in the string. The radix can be an integer between 2 and 36.
+let x = parseInt(y,2);
+//The conditional operator, also called the ternary operator, can be used as a one line if-else expression.
+//The syntax is a ? b : c, where a is the condition, b is the code to run when the condition returns true, and c is the code to run when the condition returns false.
+function checkEqual(a,b) {
+  return a == b ? "Equal"  : "Not Equal";
+}
+console.log(checkEqual(1,3));
+function checkSign(num) {
+  return (num > 0) ? "positive"
+  : (num < 0) ? "negative"
+  : "zero" ;
+  }
+  
+  console.log(checkSign(10));
+
+  function countdown(n){
+    if (n < 1) {
+      return []
+    }
+    else {
+      const countArray = countdown(n-1);
+      countArray.unshift(n);
+      return countArray;
+    }
+  }
+  console.log(countdown(5));
+
+  function randomRange(myMin , myMax) {
+    return Math.floor(Math.random() * ((myMax - myMin) + 1) + myMin);
+  }
+  randomRange(10,20);
+
+  function rangeOfNumbers(startNum , endNum) {
+    if (endNum < startNum) {
+      return [];
+    }
+    else {
+      const countRange = rangeOfNumbers(startNum,endNum - 1);
+      countRange.push(endNum);
+      return countRange; 
+    }
+  };
+
+  const contacts = [
+    {
+      firstName: "Akira",
+      lastName: "Laine",
+      number: "0543236543",
+      likes: ["Pizza", "Coding", "Brownie Points"],
+    },
+    {
+      firstName: "Harry",
+      lastName: "Potter",
+      number: "0994372684",
+      likes: ["Hogwarts", "Magic", "Hagrid"],
+    },
+    {
+      firstName: "Sherlock",
+      lastName: "Holmes",
+      number: "0487345643",
+      likes: ["Intriguing Cases", "Violin"],
+    },
+    {
+      firstName: "Kristian",
+      lastName: "Vos",
+      number: "unknown",
+      likes: ["JavaScript", "Gaming", "Foxes"],
+    },
+  ];
+  function lookUpProfile(name, prop) {
+    for (let i = 0 ; i < contacts.length ; i++) {
+      if (contacts[i].firstName == name) {
+        if (contacts[i].hasOwnProperty(prop)) {
+          return contacts[i][prop];
+        }
+        else {
+          return "No such property"
+        }
+      }
+    }
+    return "No such contact"
+  }
+  
+  lookUpProfile("Akira", "likes");  
