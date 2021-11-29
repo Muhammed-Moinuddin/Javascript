@@ -74,7 +74,7 @@ function functionWithArgs(param1,param2){
     console.log(param1 + param2);
 }
 functionWithArgs(2,4);
-//Passing Values to Functions with Arguments 
+//Passing Values to Functions with Arguments
 //Return a Value from a Function with Return
 function timesFive(param){
     return param*5;
@@ -96,7 +96,7 @@ function timesFive(param){
   function addSum(num) {
     sum101 = sum101 + num;
   }
-  
+
   addSum(3);
   //addSum is a function without a return statement. The function will change the global sum variable but the returned value of the function is undefined.
   //In the case that the function doesn't have a return statement, when you call it, the function processes the inner code but the returned value is undefined.
@@ -141,7 +141,7 @@ testNotEqual(98);
 1 != "1"
 1 != '1'
 1 != true
-0 != false 
+0 != false
 In order, these expressions would evaluate to true, false, false, false, and false.
 */
  function testOperator1(num){
@@ -188,7 +188,7 @@ function   caseInSwitch(val) {
        answer = "gamma";
        break;
      default:
-       answer = "delta";    
+       answer = "delta";
    }
    return answer
  }
@@ -205,7 +205,7 @@ function   caseInSwitch(val) {
      case 5:
      case 6:
        answer = "High";
-       break;  
+       break;
    }
    return answer
  }
@@ -240,7 +240,7 @@ function   caseInSwitch(val) {
  const goodDog = "Hunter";
  const doggy = dogs[goodDog];
  console.log(doggy);
- 
+
  dogs.Fido = "Happy Mutt";
  dogs[Snoopie] = "Happy Beagle";
  delete dogs.Fido;
@@ -385,7 +385,7 @@ while (i<5){
   i++
 };
 console.log(myArray);
-//Iteration with while (it runs while a specified condition is true and stops once that condition is no longer true.) 
+//Iteration with while (it runs while a specified condition is true and stops once that condition is no longer true.)
 const myArray2 = [];
 let i2 = 5;
 while (i2>=0){
@@ -402,7 +402,7 @@ const myArray4 = [];
 for (let i = 1; i < 10; i += 2) {
   myArray4.push(i4);
 };
-                                                                                                                                                                                                                            
+
 const myArray5 = [];
 for (let i5 = 9 ; i5 > 0 ; i5 -= 2) {
   myArray5.push(i5)
@@ -415,7 +415,7 @@ for (let i = 0 ; i < 5 ; i++) {
 };
 console.log(total);
 //  do...while Loop
-// In do...while loop, the code will run once without giving importance to the condition & after one cycle/loop , the code will run by giving importance to the condition. It's further explain below  
+// In do...while loop, the code will run once without giving importance to the condition & after one cycle/loop , the code will run by giving importance to the condition. It's further explain below
 //First We'll check a normal while loop.
 const checkArray = [];
 let z = 5;
@@ -433,7 +433,7 @@ z2++ ;
 while (z2 < 5);
 //Above code will run jsut once even if the condition is not true because it's a do...while. Ans : checkArray = [5]
 //////
-//Recursion is the concept that a function can be expressed in terms of itself. 
+//Recursion is the concept that a function can be expressed in terms of itself.
 //Normal Loop
 arr1 = [1,2,3,4,5,6,7,8,9];
 function multiply(arr1,n){
@@ -470,75 +470,93 @@ function checkSign(num) {
   : (num < 0) ? "negative"
   : "zero" ;
   }
-  
-  console.log(checkSign(10));
 
-  function countdown(n){
-    if (n < 1) {
-      return []
-    }
-    else {
-      const countArray = countdown(n-1);
-      countArray.unshift(n);
-      return countArray;
-    }
+console.log(checkSign(10));
+
+function countdown(n){
+  if (n < 1) {
+    return []
   }
-  console.log(countdown(5));
-
-  function randomRange(myMin , myMax) {
-    return Math.floor(Math.random() * ((myMax - myMin) + 1) + myMin);
+  else {
+    const countArray = countdown(n-1);
+    countArray.unshift(n);
+    return countArray;
   }
-  randomRange(10,20);
+}
+console.log(countdown(5));
 
-  function rangeOfNumbers(startNum , endNum) {
-    if (endNum < startNum) {
-      return [];
-    }
-    else {
-      const countRange = rangeOfNumbers(startNum,endNum - 1);
-      countRange.push(endNum);
-      return countRange; 
-    }
-  };
+function randomRange(myMin , myMax) {
+  return Math.floor(Math.random() * ((myMax - myMin) + 1) + myMin);
+}
+randomRange(10,20);
 
-  const contacts = [
-    {
-      firstName: "Akira",
-      lastName: "Laine",
-      number: "0543236543",
-      likes: ["Pizza", "Coding", "Brownie Points"],
-    },
-    {
-      firstName: "Harry",
-      lastName: "Potter",
-      number: "0994372684",
-      likes: ["Hogwarts", "Magic", "Hagrid"],
-    },
-    {
-      firstName: "Sherlock",
-      lastName: "Holmes",
-      number: "0487345643",
-      likes: ["Intriguing Cases", "Violin"],
-    },
-    {
-      firstName: "Kristian",
-      lastName: "Vos",
-      number: "unknown",
-      likes: ["JavaScript", "Gaming", "Foxes"],
-    },
-  ];
-  function lookUpProfile(name, prop) {
-    for (let i = 0 ; i < contacts.length ; i++) {
-      if (contacts[i].firstName == name) {
-        if (contacts[i].hasOwnProperty(prop)) {
-          return contacts[i][prop];
-        }
-        else {
-          return "No such property"
-        }
+function rangeOfNumbers(startNum , endNum) {
+  if (endNum < startNum) {
+    return [];
+  }
+  else {
+    const countRange = rangeOfNumbers(startNum,endNum - 1);
+    countRange.push(endNum);
+    return countRange;
+  }
+};
+
+const contacts = [
+  {
+    firstName: "Akira",
+    lastName: "Laine",
+    number: "0543236543",
+    likes: ["Pizza", "Coding", "Brownie Points"],
+  },
+  {
+    firstName: "Harry",
+    lastName: "Potter",
+    number: "0994372684",
+    likes: ["Hogwarts", "Magic", "Hagrid"],
+  },
+  {
+    firstName: "Sherlock",
+    lastName: "Holmes",
+    number: "0487345643",
+    likes: ["Intriguing Cases", "Violin"],
+  },
+  {
+    firstName: "Kristian",
+    lastName: "Vos",
+    number: "unknown",
+    likes: ["JavaScript", "Gaming", "Foxes"],
+  },
+];
+function lookUpProfile(name, prop) {
+  for (let i = 0 ; i < contacts.length ; i++) {
+    if (contacts[i].firstName == name) {
+      if (contacts[i].hasOwnProperty(prop)) {
+        return contacts[i][prop];
+      }
+      else {
+        return "No such property"
       }
     }
-    return "No such contact"
   }
-  
-  lookUpProfile("Akira", "likes");  
+  return "No such contact"
+}
+
+lookUpProfile("Akira", "likes");
+
+myString1 = "Moin is the best";
+myRegex1 = /Moin/
+myRegex2 = /is|the/
+console.log(myRegex1.test(myString1));
+// i - flag that ignores the case
+myString2 = "FreeCodeCamp" ;
+myRegex3 = /FREECodeCAMP/i ;
+console.log(myRegex3.test(myString2));
+const s = [2,4,6];
+s[0] = 5;
+let obj1 = {
+  name : "Moin",
+  class: "5"
+}
+Object.freeze(obj1);
+obj1.name = "Abbas";
+console.log(obj1); //It will print name : "Moin", class: "5" as the obj is freezed with that method.
