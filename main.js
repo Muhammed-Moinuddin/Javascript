@@ -560,3 +560,42 @@ let obj1 = {
 Object.freeze(obj1);
 obj1.name = "Abbas";
 console.log(obj1); //It will print name : "Moin", class: "5" as the obj is freezed with that method.
+
+const myFunction = () => new Date();
+const myConcatenation = (arr1,arr2) => arr1.concat(arr2);
+console.log(myConcatenation([1,2],[3,4,5]));
+const multiplier = item1 => item1*2;
+multiplier(4);
+//The default parameter kicks in when the argument is not specified (it is undefined).
+const defaultParam = (name = "Anonymous") => "Hello" + name ;
+console.log(defaultParam()); // it will print "Hello Anonymous"
+console.log(defaultParam("Moin")); // it will print "Hello Moin"
+//Using Rest Parameter
+function howMany(...arg){
+  return "You have passed" + arg.length + "arguments";
+}
+console.log(howMany(1,2,3));
+function howMany1(...arg){
+  return "Second Argument is " + arg[1];
+}
+console.log(howMany1(1,2,3));
+//Normal Version
+var arr = [6, 89, 3, 45];
+var maximus = Math.max.apply(null,arr);
+console.log(maximus);
+//We had to use Math.max.apply(null, arr) because Math.max(arr) returns NaN. Math.max() expects comma-separated arguments, but not an array & apply() method takes arguments as an array.
+//Modern Version using Spread Operator
+const array1 = [6, 89, 3, 45];
+const maximus1 = Math.max(...array1);
+console.log(maximus1);
+//Using ES6 to take values of object (Destructuring Assignment to Extract Values from Objects)
+const user = {name : "John" , age : 19  };
+const { name, age } = user;
+//Destructuring Assignment to Assign Variables from Objects
+const {name: newName, age: newAge} = user;
+//Using Destructuring Assignment to Assign Variables from Nested Objects
+const LOCAL_FORECAST = {
+  today: { low: 12 , high: 18},
+  tomorrow: { low: 11 , high: 21}
+};
+const {today: {low: Newlow , high: Newhigh}} = LOCAL_FORECAST;
