@@ -599,3 +599,40 @@ const LOCAL_FORECAST = {
   tomorrow: { low: 11 , high: 21}
 };
 const {today: {low: Newlow , high: Newhigh}} = LOCAL_FORECAST;
+const [a,b,,,c] = [1,2,3,4,5,6];
+console.log(a,b,c);
+let d = 8 , e = 5 ;
+[d,e] = [e,d];
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {
+  const [a,b,...arr] = list;
+    return arr;
+}
+const arr = removeFirstTwo(source);
+const stats = {
+  max: 98,
+  mode: 66.9,
+  median: 55.6,
+  min: 32
+}
+const half = ({min,max}) => (max + min)/2.0 ; //Destructuring Object Components
+//Create Strings using Template Literals
+const result = {
+  success: ["First Position" , "Hardwork" , "Talent"],
+  failure: ["Normal Position" , "Laziness" , "Not Focused"]
+}
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"]
+};
+function makeList(arr) {
+  const failureItems = [];
+  for (let i = 0 ; i < arr.length ; i++) {
+    const checking =  `<li class="text-warning">${arr[i]}</li>`;
+     failureItems.push(checking)
+  }
+  return failureItems;
+}
+const failuresList = makeList(result.failure);
+console.log(failuresList);
