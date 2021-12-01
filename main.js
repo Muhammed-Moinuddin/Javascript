@@ -636,3 +636,16 @@ function makeList(arr) {
 }
 const failuresList = makeList(result.failure);
 console.log(failuresList);
+const createPerson = (name, age, gender) => ({
+  name,
+  age,
+  gender
+});
+//The JavaScript this keyword refers to the object it belongs to.
+const Person = {
+  name: "Taylor",
+  sayHello(){
+    return `Hello my name is ${this.name}.`
+  }
+}
+//ES6 provides a new syntax to create objects, using the class keyword.
