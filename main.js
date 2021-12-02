@@ -649,3 +649,18 @@ const Person = {
   }
 }
 //ES6 provides a new syntax to create objects, using the class keyword.
+class Vegetable {
+  constructor (paramTomato) {
+    this.name = paramTomato;
+  }
+}
+const tomato = new Vegetable("Tomato");
+console.log(tomato.name);
+
+const stringLower = (string) => {
+  return string.toLowerCase();
+}
+const stringUpper = (string) => {
+  return string.toUpperCase();
+}
+export {stringLower,stringUpper};
