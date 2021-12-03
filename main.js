@@ -664,3 +664,10 @@ const stringUpper = (string) => {
   return string.toUpperCase();
 }
 export {stringLower,stringUpper};
+//Export defaults are useful to export only one value from a file & sometimes is used to create a fallback value for a file or module.
+export default function subtract(x,y) {
+  return x - y ;
+};
+const makeServerRequest = new Promise((resolve, reject)=>{
+
+});
