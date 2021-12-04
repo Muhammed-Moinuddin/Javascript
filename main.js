@@ -669,5 +669,45 @@ export default function subtract(x,y) {
   return x - y ;
 };
 const makeServerRequest = new Promise((resolve, reject)=>{
-
+  let responseFromServer = true;
+  if (responseFromServer) {
+    resolve("We got the data");
+  }
+  else
+  {
+    reject("Data not recieved");
+  }
+  makeServerRequest.then(result => {
+    console.log(result)
+  });
+  makeServerRequest.catch(error => {
+    console.log(error);
+  });
 });
+class Fruit{
+  constructor(){
+    this.name = "Mango",
+    this.region = "Made in Pakistan"
+  }
+}
+const fruit1 = new Fruit();
+console.log(fruit1.region);
+//Use getters and setters to Control Access to an Object
+class Thermostat {
+  constructor(f){
+    this._f = f;
+  }
+  get temperature(){
+    return 5/9 * (this._f-32) ;
+  }
+  set temperature(c){
+    this._f = c * 9.0 / 5 + 32
+  }
+}
+const thermos = new Thermostat(76);
+let temp = thermos.temperature;
+console.log(temp);
+thermos.temperature = 26;
+temp = thermos.temperature;
+console.log(temp);
+//When you implement this, you will track the temperature inside the class in one scale, either Fahrenheit or Celsius.
