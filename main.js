@@ -739,5 +739,13 @@ console.log(catStr.match(bgRegex));
 console.log(batStr.match(bgRegex));
 console.log(matStr.match(bgRegex));
 let quoteSample = "Blueberry 3.141592653s are delicious.";
-let myRegex = /[h-s2-6]/ig; 
-let result = quoteSample.match(myRegex); 
+let myRegex = /[h-s2-6]/ig;
+let result = quoteSample.match(myRegex);
+//Match Single Characters Not Specified
+let quoteSample1 = "3 blind mice.";
+let myRegex1 = /[^aeiou1-4]/gi;
+let result2 = quoteSample1.match(myRegex1);
+console.log(result2);
+let difficultSpelling1 = "Mississippi";
+let myRegex2 = /s+/g ;
+let result8 = difficultSpelling1.match(myRegex2);
