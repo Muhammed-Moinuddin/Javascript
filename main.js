@@ -749,3 +749,24 @@ console.log(result2);
 let difficultSpelling1 = "Mississippi";
 let myRegex2 = /s+/g ;
 let result8 = difficultSpelling1.match(myRegex2);
+console.log(result8);
+//Match Characters that Occur Zero or More Times
+let soccerWord = "goooooooooal!";
+let gPhrase = "gut feeling";
+let oPhrase = "over the moon";
+let goRegex =  /go*/;
+console.log(soccerWord.match(goRegex));
+console.log(gPhrase.match(goRegex));
+console.log(oPhrase.match(goRegex));
+//Find Characters with Lazy Matching
+//Lazy Matching 1
+let text = "titanic";
+let titanicRegex = /t[a-z]*i/
+console.log(text.match(titanicRegex));
+//Regular expressions are by default greedy, so the match would return ["titani"]. It finds the largest sub-string possible to fit the pattern.
+let titanicRegex2 = /t[a-z]*?i/
+console.log(text.match(titanicRegex2));
+let newText = "<h1>Winter is coming</h1>";
+let myRegex = /<.*?>/;
+let newResult = newText.match(myRegex);
+console.log(newResult);
