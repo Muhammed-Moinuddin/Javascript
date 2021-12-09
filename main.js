@@ -770,3 +770,28 @@ let newText = "<h1>Winter is coming</h1>";
 let myRegex = /<.*?>/;
 let newResult = newText.match(myRegex);
 console.log(newResult);
+//greedy regex that finds one or more C within a group of other alphabets
+let reCriminals = /C+/g;
+//Match Beginning String Patterns
+let firstString = "Moin is the best but not Shahzaib";
+let firstRegex = /^Moin/;
+firstRegex.test(firstString); //returns true
+let secondString = "Shahzaib is the best but not Moin"
+firstRegex.test(secondString); // returns false
+//Match Ending String Patterns
+let secondRegex = /Shahzaib$/;
+secondRegex.test(firstString); // return true
+secondRegex.test(secondString);// returns false
+//Match All Letters and Numbers
+let longHand = /[A-Za-z0-9_]+/; //Note, this character class also includes the underscore character (_).
+let shortHand = /\w+/; // Same working as above
+let numberSample = "123987";
+let quoteSample = "important_var";
+longHand.test(numberSample); //true
+shortHand.test(numberSample); //true
+longHand.test(quoteSample); //true
+shortHand.test(quoteSample); //true
+let quoteSample2 = "The five boxing wizards jump quickly.";
+let newShorthand = /\w/g;
+let answer1 = quoteSample2.match(newShorthand);
+console.log(answer1);
