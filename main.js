@@ -795,3 +795,34 @@ let quoteSample2 = "The five boxing wizards jump quickly.";
 let newShorthand = /\w/g;
 let answer1 = quoteSample2.match(newShorthand);
 console.log(answer1);
+//Match Everything But Letters and Numbers
+let sentenceOne = "Hey! How are you?"
+let nonAlphaNumeric = /\W/g;
+let answer2 = sentenceOne.match(nonAlphaNumeric).length;
+console.log(answer2);
+// [^A-Za-z0-9_] = \W
+//Match All Numbers
+let movieName = "A Short Story of 1947."
+let numRegex = /\d/g ;
+let answer3 = movieName.match(numRegex);
+console.log(answer3);
+//Match All Non-Numbers
+let noNumRegex = /\D/g ;
+let answer4 = movieName.match(noNumRegex);
+console.log(answer4);
+let sample = "Whitespaces. Whitespaces everywhere"
+let countWhiteSpaces = /\s/g ;
+let notCountWhiteSpaces = /\S/g ;
+let answer5 = sample.match(countWhiteSpaces);
+console.log(answer5);
+let answer6 = sample.match(notCountWhiteSpaces);
+console.log(answer6);
+//Specify Upper and Lower Number of Matches
+let ohStr = "Ohhh no";
+let ohRegex = /Oh{3,6} no/;
+let answer7 = ohStr.match(ohRegex);
+console.log(answer7);
+let haStr ="h" + "a".repeat(10) + "h";
+let haRegex = /ha{9,}h/;
+let haResult = haRegex.test(haStr);
+console.log(haResult);
