@@ -826,3 +826,24 @@ let haStr ="h" + "a".repeat(10) + "h";
 let haRegex = /ha{9,}h/;
 let haResult = haRegex.test(haStr);
 console.log(haResult);
+//Specify Exact Number of Matches
+let timStr = "Timmmmber";
+let timRegex = /Tim{3}ber/;
+console.log(timRegex.test(timStr));
+let american = "color";
+let british = "colour";
+let languageRegex = /colou?r/; //Makes u optional
+console.log(languageRegex.test(american)); //true
+console.log(languageRegex.test(british)); //true
+//Positive and Negative Lookahead
+let sampleWord = "astronaut";
+let pwRegex = /(?=\w{6,})(?=\D*\d(2))/;
+let answer8 = pwRegex.test(sampleWord);
+console.log(answer8);
+//Lookaheads Example 2
+let quit = "qu";
+let noquit = "qt";
+let quitRegex = /(q?=u)/;
+let noquitRegex = /(q!=u)/;
+console.log(quit.match(quitRegex)); //true
+console.log(noquit.match(noquitRegex)); //true
