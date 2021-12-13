@@ -847,3 +847,20 @@ let quitRegex = /(q?=u)/;
 let noquitRegex = /(q!=u)/;
 console.log(quit.match(quitRegex)); //true
 console.log(noquit.match(noquitRegex)); //true
+//Check For Mixed Grouping of Characters
+//ometimes we want to check for groups of characters using a Regular Expression and to achieve that we use parentheses ().
+let myString4 = "Eleanor Roosevelt";
+let myRegexNew = /(Franklin|Eleanor!|Franklin D.) Roosevelt/;
+console.log(myRegexNew.test(myString4)) ;
+let repeatNum = "10 10 10";
+let repeatNumRegex = /^(\d+)(\s)\1\2\1$/ ;
+console.log(repeatNumRegex.test(repeatNum));
+//Use Capture Groups to Search and Replace
+let str = "One Two Three";
+let fixRegex = /(\D+)\s(\D+)\s(\D+)/;
+let replaceText = "$3 $2 $1"
+let answer9 = str.replace(fixRegex, replaceText);
+console.log(answer9);
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s+|\s+$/gi;
+let result = hello.replace(wsRegex,"");
