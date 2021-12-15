@@ -863,4 +863,20 @@ let answer9 = str.replace(fixRegex, replaceText);
 console.log(answer9);
 let hello = "   Hello, World!  ";
 let wsRegex = /^\s+|\s+$/gi;
-let result = hello.replace(wsRegex,"");
+let result11 = hello.replace(wsRegex,"");
+console.log(result11);
+console.clear();
+var Err = ["MointheDev","Learning","Earning"];
+console.warn(Err);
+let one = 1;
+let two = "2";
+console.log(typeof one);
+console.log(typeof two);
+//Catch Misspelled Variable and Function Names
+let misSpelled = "Misspelled Variable and Function Names";
+console.log(`It gives Reference error when ${misSpelled}`);
+let myArray = [1,2,3];
+let arraySum = myArray.reduce((previous,current)=> previous + current);
+console.log(`Sum of Arrays: ${arraySum}`);
+//Catch Mixed Usage of Single and Double Quotes
+let checkQuotes = "My name is 'Moin'"; 
