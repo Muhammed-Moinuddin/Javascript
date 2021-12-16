@@ -879,4 +879,39 @@ let myArray = [1,2,3];
 let arraySum = myArray.reduce((previous,current)=> previous + current);
 console.log(`Sum of Arrays: ${arraySum}`);
 //Catch Mixed Usage of Single and Double Quotes
-let checkQuotes = "My name is 'Moin'"; 
+let checkQuotes = "My name is 'Moin'";
+//Catch Use of Assignment Operator Instead of Equality OperatorPassed
+let x1 = 9;
+let y1 = 7;
+let result11 = "To come";
+if (x==y) {
+  result11 = "Equal";
+}
+else {
+  result11 = "Not Equal";
+}
+console.log(result11);
+//Catch Missing Open and Closing Parenthesis After a Function Call
+function getNine() {
+  let x = 6;
+  let y = 3;
+  return x + y;
+}
+let result12 = getNine();
+console.log(result12);
+//Catch Arguments Passed in the Wrong Order When Calling a Function
+function raiseToPower(b,e) {
+  return Math.pow(b,e)
+}
+let base = 2;
+let exp = 3;
+let result13 = raiseToPower(base, exp);
+console.log(result13);
+//Catch Off By One Errors When Using Indexing
+function multiplyBy2() {
+  let num = "12345";
+  for (let i = 0; i < num.length ; i++) {
+    console.log(num[i]*2)
+  }
+}
+multiplyBy2();
