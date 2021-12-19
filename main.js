@@ -916,19 +916,54 @@ function multiplyBy2() {
 }
 multiplyBy2();
 //Use Caution When Reinitializing Variables Inside a Loop
-function zeroArray(m, n) {
+function zeroArray(m,n) {
   let newArray = [];
   let row = [];
   for (let i = 0; i < m; i++) {
     for (let j = 0; j < n; j++) {
-       row.push(0);
+      row.push(0);
     }
     newArray.push(row);
-    row = [];
   }
-   row = [];
+  row = [];
   return newArray;
-
 }
 let matrix = zeroArray(3,2);
 console.log(matrix);
+//Prevent Infinite Loops with a Valid Terminal Condition
+function myfunc() {
+  for (let i = 1; i <= 4; i+=2) {
+    console.log("Still Going!");
+  }
+}
+console.log(myfunc());
+let array2 = ["One" , 2 , "three" , false , undefined];
+array2[1] = "2 in string";
+console.log(aaray2);
+function mixedNumbers(arr){
+  arr.push(7, 'VIII', 9);
+  arr.unshift('I', 2, 'three');
+}
+let arr = [4 , "Five" , 6];
+console.log(mixedNumbers(arr));
+function popShift(arr){
+  let popped = arr.pop();
+  let shifted = arr.shift();
+};
+console.log(popShift(['challenge', 'is', 'not', 'complete']));
+//Remove Items Using splice()
+const arr = [2,4,1,7,3,9,1];
+arr.splice(0,5);
+console.log(arr);
+//Add Items Using splice()
+function htmlColorNames(arr){
+  arr.splice(0,2,"Red","Blue");
+  return arr;
+}
+console.log(htmlColorNames(["Rippie","Blurple","Green","Yellow","Orange"]));
+function forecast(arr) {
+  let check = arr.slice(2,4);
+  return check;
+}
+console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
+//Copy an Array with the Spread Operator
