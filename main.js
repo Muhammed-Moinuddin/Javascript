@@ -961,9 +961,27 @@ function htmlColorNames(arr){
   return arr;
 }
 console.log(htmlColorNames(["Rippie","Blurple","Green","Yellow","Orange"]));
+//Copy Array Item Using Slice
 function forecast(arr) {
   let check = arr.slice(2,4);
   return check;
 }
 console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
 //Copy an Array with the Spread Operator
+function copyMachine(arr,num){
+  let newArray1 = [];
+  while (num >= 1) {
+    let checkArray1 = [...arr];
+    newArray1.push(checkArray1);
+    num-- ;
+  }
+  return newArray;
+}
+console.log(copyMachine([true,false,true],2));
+function spreadOut() {
+  let fragment = ['to', 'code'];
+  let sentence = ['learning',...fragment,'is', 'fun'];
+  return sentence;
+}
+
+console.log(spreadOut());
