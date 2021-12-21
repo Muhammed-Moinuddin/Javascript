@@ -985,3 +985,27 @@ function spreadOut() {
 }
 
 console.log(spreadOut());
+//Check For The Presence of an Element With indexOf()
+let fruits = ["orange", "mangoes" , "banana"];
+fruits.indexOf("eggs"); // returns -1 (means not present)
+fruits.indexOf("mangoes"); // returns 1 (present & on 1 position)
+function quickCheck(arr,elem){
+  if (arr.indexOf(elem) >= 0) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+console.log(quickCheck(["peach","pomegrante","apple"],"apple"));
+//Iterate Through All an Array's Items Using For Loops
+function filteredArray(arr, elem) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].indexOf(elem) < 0) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
+console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
