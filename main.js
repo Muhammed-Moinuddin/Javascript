@@ -1009,3 +1009,32 @@ function filteredArray(arr, elem) {
   return newArr;
 }
 console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
+//Create complex multi-dimensional arrays
+let myNestedArray = [
+  [
+    ["deep"],
+    [
+      ["deeper"],
+      [
+        ["deepest"],
+        ['unshift', false, 1, 2, 3, 'complex', 'nested'],
+        ['loop', 'shift', 6, 7, 1000, 'method'],
+        ['concat', false, true, 'spread', 'array'],
+        ['mutate', 1327.98, 'splice', 'slice', 'push'],
+        ['iterate', 1.3849, 7, '8.4876', 'arbitrary', 'depth']
+      ]
+    ]
+  ]
+];
+//
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28
+};
+//Add Key-Value Pairs to JavaScript Objects
+foods.bananas = 13;
+foods["grapes"] = 35;
+const fruit = "strawberries";
+foods[fruit] = 27;
+console.log(foods);
