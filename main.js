@@ -1038,3 +1038,82 @@ foods["grapes"] = 35;
 const fruit = "strawberries";
 foods[fruit] = 27;
 console.log(foods);
+//Modify an Object Nested Within an Object
+let userProfile = {
+  name: "Shabbir",
+  id: 81972,
+  data: {
+    college: "SSGU",
+    percentage: 93 ,
+    previousData: {
+      school: "The Educators"
+    }
+  }
+};
+userProfile.data.previousData.school = "The Smart School";
+console.log(userProfile);
+// Making Changes in multi-dimensional Array
+let checkingDeep = [
+  ["deep"],
+  [
+    ["deeper"] , ["deeper"]
+  ],
+  [
+    [
+      ["deepest"], ["deepest"]
+    ],
+    [
+      [
+        ["deep-est?"]
+      ]
+    ],
+  ]
+];
+checkingDeep[2][1][0][0][0] = "Yes It's the deepest";
+console.log(checkingDeep);
+//Access Property Names with Bracket Notation
+let homeGrocery = {
+  eggs: 190,
+  yogurt: 50,
+  banana: 90,
+  tomato: 120
+};
+function checkGrocery(scannedItems){
+  return homeGrocery(scannedItems);
+}
+console.log(checkGrocery("banana"));
+//Use the delete Keyword to Remove Object Properties
+delete foods.yogurt;
+//Check if an Object has a Property
+let users = {
+  Alan: {
+    age: 27,
+    online: true
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: true
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function isEveryoneHere(userObj) {
+  if
+  (userObj.hasOwnProperty("Alan") & 'Jeff' in userObj & 'Sarah' in userObj & userObj.hasOwnProperty("Ryan"))
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
+
+console.log(isEveryoneHere(users));
