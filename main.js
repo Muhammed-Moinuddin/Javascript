@@ -824,7 +824,7 @@ let answer7 = ohStr.match(ohRegex);
 console.log(answer7);
 let haStr ="h" + "a".repeat(10) + "h";
 let haRegex = /ha{9,}h/;
-let haResult = haRegex.test(haStr);
+let haResult = haRegex.test (haStr);
 console.log(haResult);
 //Specify Exact Number of Matches
 let timStr = "Timmmmber";
@@ -1117,3 +1117,61 @@ function isEveryoneHere(userObj) {
 }
 
 console.log(isEveryoneHere(users));
+//Iterate Through the Keys of an Object with a for...in Statement
+let userObj = {
+  Moin: {
+    online: true
+  },
+  Shahzaib: {
+    online: false
+  },
+  Ayan: {
+    online: true
+  }
+};
+function countOnline(userObj) {
+  let answer10 = 0;
+  for (let onlineUser in userObj) {
+    if (userObj[onlineUser].online == true) {
+      answer10 += 1;
+    }
+  }
+  return answer10;
+}
+console.log(countOnline(userObj));
+//Generate an Array of All Object Keys with Object.keys()
+function getArrayOfUsers(obj) {
+  let array1 = Object.keys(obj);//Object.keys is only for Objects
+  return array1;
+}
+
+console.log(getArrayOfUsers(users));
+//Generate an Array of all sub-properties of an Object.
+function countOnline1(users) {
+  let array2 = [];
+  for (let onlineUser in users) {
+    array2.push(Object.keys(users[onlineUser]))
+  }
+  return array2;
+}
+console.log(countOnline1(users))
+
+//Modify an Array Stored in an Object
+let user1 = {
+  name: "Moin",
+  age: 21,
+  data: {
+    username: "moin211",
+    id: 12345,
+    email: "moin@email.com",
+    friends: [
+      "Shahzaib",
+      "Ayan"
+    ]
+  }
+};
+function addFriend(userObj,friend){
+  userObj.data.friends.push(friend);
+  return userObj["data"]["friends"];
+}
+console.log(addFriend(user1,"Inshal"));
