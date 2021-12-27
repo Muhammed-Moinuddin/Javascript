@@ -1183,3 +1183,13 @@ function CelsiusToF(celsius) {
 }
 console.log(CelsiusToF(30));
 //Reverse a String
+function reverseString(str){
+  let array1 = [];
+  for (let i = str.length ; i >= 0 ; i--) {
+    array1.push(str[i]);
+  };
+  let str1 = array1.toString();
+  let str2 = str1.replace(/,/g,"");
+  return str2;
+};
+console.log(reverseString("hello"));
