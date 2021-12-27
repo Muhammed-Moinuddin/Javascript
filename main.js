@@ -1175,3 +1175,11 @@ function addFriend(userObj,friend){
   return userObj["data"]["friends"];
 }
 console.log(addFriend(user1,"Inshal"));
+//Convert Celsius to Fahrenheit
+function CelsiusToF(celsius) {
+  let fahrenheit;
+  fahrenheit = celsius * (9/5) + 32 ;
+  return fahrenheit;
+}
+console.log(CelsiusToF(30));
+//Reverse a String
