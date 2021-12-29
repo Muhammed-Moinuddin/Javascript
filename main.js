@@ -1193,3 +1193,16 @@ function reverseString(str){
   return str2;
 };
 console.log(reverseString("hello"));
+//Factorialize a Number
+function factoriolize(num) {
+  if (num > 1) {
+    for (let i = num; i > 1 ; i--) {
+      num = num * (i - 1);
+    };
+  }
+  else if (num == 0 || num == 1) {
+    num =1
+  }
+  return num;
+};
+console.log(factoriolize(5));
