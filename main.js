@@ -1219,3 +1219,22 @@ function longestWord(str) {
 };
 console.log(longestWord(sentence1));
 let sentence1 = "Moin is here to help you out so just cheerup and be confident"
+//Return Largest Numbers in Arrays
+function largestOfFour(arr) {
+  let arrLength = arr.length;
+  let maxNumber = -100;
+  let newArray = [];
+  for (let i = 0 ; i < arrLength ; i++) {
+    for (let j = 0 ; j < arr[i].length ; j++) {
+      if (arr[i][j] > maxNumber) {
+        maxNumber = arr[i][j];
+        }
+    }
+    newArray.push(maxNumber)
+    console.log(newArray)
+    maxNumber = -100;
+  }
+  return newArray;
+}
+
+largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]]);
