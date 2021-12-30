@@ -1206,3 +1206,16 @@ function factoriolize(num) {
   return num;
 };
 console.log(factoriolize(5));
+//Find the Longest Word in a String
+function longestWord(str) {
+  let words = str.split(" ");
+  let maxLength = 0;
+  for (let i = 0 ; i > maxLength ; i++) {
+    if (words[i].length > maxLength) {
+      maxLength = words[i].length;
+    }
+  };
+  return maxlength;
+};
+console.log(longestWord(sentence1));
+let sentence1 = "Moin is here to help you out so just cheerup and be confident"
