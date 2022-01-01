@@ -1238,3 +1238,9 @@ function largestOfFour(arr) {
 }
 
 largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]]);
+
+//Confirm the Ending
+function confirmEnding(str, target) {
+  return str.slice(str.length - target.length) === target;
+};
+confirmEnding("Bastian", "n");
