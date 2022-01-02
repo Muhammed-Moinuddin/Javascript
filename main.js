@@ -1257,3 +1257,25 @@ function confirmEnding1(str, target) {
 
 }
 confirmEnding1("Bastian", "n");
+//Repeat a String Repeat a String
+function repeatStringNumTimes(str, num) {
+  let newStr = "";
+ for (let i = 0; i < num ; i++) {
+    newStr = newStr + str
+ };
+ return newStr;
+}
+
+repeatStringNumTimes("abc", 3);
+//Truncate a String
+function truncateString(str, num) {
+  if (num < 20) {
+    return str.slice(0,num)+"...";
+  }
+  else
+  {
+    return str.slice(0,num);
+  }
+}
+
+console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
