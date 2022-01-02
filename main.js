@@ -1244,3 +1244,16 @@ function confirmEnding(str, target) {
   return str.slice(str.length - target.length) === target;
 };
 confirmEnding("Bastian", "n");
+function confirmEnding1(str, target) {
+  let length = str.length - target.length ; // 11-6 = 5
+  let newLength = str.substr(length)// (5,)
+  if (newLength == target) { //str[5]
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+
+}
+confirmEnding1("Bastian", "n");
