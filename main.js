@@ -1279,3 +1279,17 @@ function truncateString(str, num) {
 }
 
 console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
+//Finders Keepers
+function findElement(arr, func) {
+  let num = 0;
+  for (let i = 0 ; i < arr.length ; i++) {
+    num = arr[i]
+    if (func(num) == true) {
+      return num;
+    }
+  }
+  return undefined;
+
+}
+
+findElement([1, 2, 3, 4], num => num % 2 === 0);
