@@ -1293,10 +1293,20 @@ function findElement(arr, func) {
 }
 
 findElement([1, 2, 3, 4], num => num % 2 === 0);
-//
+//Check if a value is classified as a boolean primitive. Return true or false.  Boolean primitives are true and false.
 function booWho(bool) {
   return typeof bool === "boolean";
 }
 
-// test here
 booWho(null);
+//Boo who
+function booWho(bool) {
+  if (typeof(bool) == "boolean") {
+    return true
+  }
+  else {
+    return false;
+  }
+}
+
+console.log(booWho(null));
