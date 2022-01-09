@@ -1293,7 +1293,7 @@ function findElement(arr, func) {
 }
 
 findElement([1, 2, 3, 4], num => num % 2 === 0);
-//Check if a value is classified as a boolean primitive. Return true or false.  Boolean primitives are true and false.
+//Check if a value is classified as a boolean primitive. Return true or false.Boolean primitives are true and false.
 function booWho(bool) {
   return typeof bool === "boolean";
 }
@@ -1310,3 +1310,14 @@ function booWho(bool) {
 }
 
 console.log(booWho(null));
+//Title Case a Sentence
+function titleCase(str) {
+  const newTitle = str.split(" ");
+  const updatedTitle = [];
+  for (var st in newTitle) {
+    updatedTitle[st] = newTitle[st]
+      .toLowerCase()
+      .replaceAt(0, newTitle[st].charAt(0).toUpperCase());
+  }
+  return updatedTitle.join(" ");
+}
