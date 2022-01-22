@@ -1331,13 +1331,31 @@ function titleCase(str) {
 }
 
 titleCase("I'm a little tea pot");
-//
-function frankenSplice(arr1, arr2, n) {
-  // It's alive. It's alive!
-  let localArray = arr2.slice();
-  for (let i = 0; i < arr1.length; i++) {
-    localArray.splice(n, 0, arr1[i]);
-    n++;
+//Title Case a Sentence by me.
+function titleCase(str) {
+  let newStr = str.toLowerCase();
+  let array1 = newStr.split(" ");
+  let array2 = [];
+  for (let i = 0; i < array1.length; i++) {
+    array2[i] = array1[i].replace(
+      array1[i].charAt(0),
+      array1[i].charAt(0).toUpperCase()
+    );
   }
-  return localArray;
+ return array2.join(" ");
 }
+
+titleCase("I'm a little tea pot");
+//Slice and Splice
+function frankenSplice(arr1, arr2, n) {
+  const arr1New = arr1.slice(0,arr1.length);
+  const arr2New = arr2.slice(0,arr2.length);
+  console.log(arr2New)
+  console.log(arr1New)
+  for (let i = arr1.length - 1; i >= 0 ; i--) {
+    arr2New.splice(n , 0 , arr1New[i]);
+  };
+  return arr2New;
+}
+
+console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));
