@@ -1372,3 +1372,24 @@ function bouncer(arr) {
 }
 
 bouncer([7, "ate", "", false, 9]);
+//Where do I Belong
+function getIndexToIns(arr, num) {
+  const newArr = arr;
+  newArr.sort(function(a,b){return (a-b)})
+  if (arr.length == 0) {
+    return 0
+  }
+  else if (newArr[arr.length - 1] < num) {
+    return arr.length
+  }
+  else if (newArr[0] < num || newArr[0] == num || newArr[arr.length - 1] > num || newArr[arr.length - 1] == num) {
+    for (let i = 0 ; i < newArr.length ; i++) {
+    console.log(newArr[i])
+    if (newArr[i] > num || newArr[i] == num) {
+      return i
+    }
+  };
+  }
+}
+
+console.log(getIndexToIns([], 1));
