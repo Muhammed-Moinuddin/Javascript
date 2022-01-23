@@ -1359,3 +1359,16 @@ function frankenSplice(arr1, arr2, n) {
 }
 
 console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));
+//Falsy Bouncer
+function bouncer(arr) {
+  const checkArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    let newa = Boolean(arr[i]);
+    if (newa == true) {
+      checkArr.push(arr[i]);
+    }
+  }
+ return checkArr;
+}
+
+bouncer([7, "ate", "", false, 9]);
