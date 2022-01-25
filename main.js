@@ -1406,3 +1406,14 @@ function mutation(arr) {
 }
 
 mutation(["hello", "hey"]);
+//Chunky Monkey
+function chunkArrayInGroups(arr, size) {
+  let a = size;
+  const newArr = [];
+  for (let i = 0 ; i < arr.length ; i = i + size) {
+    newArr.push(arr.slice(i , a));
+    a = a + size;
+  };
+  return newArr;
+}
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
