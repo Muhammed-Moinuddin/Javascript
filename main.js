@@ -1393,3 +1393,16 @@ function getIndexToIns(arr, num) {
 }
 
 console.log(getIndexToIns([], 1));
+//Mutations
+function mutation(arr) {
+  let firstArray = arr[0].toLowerCase().split("");
+  let secondArray = arr[1].toLowerCase().split("");
+  for (let i = 0; i < secondArray.length; i++) {
+    if (firstArray.indexOf(secondArray[i]) < 0) {
+      return false;
+    }
+  }
+ return true;
+}
+
+mutation(["hello", "hey"]);
