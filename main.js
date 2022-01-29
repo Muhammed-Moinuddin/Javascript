@@ -1417,3 +1417,16 @@ function chunkArrayInGroups(arr, size) {
   return newArr;
 }
 chunkArrayInGroups(["a", "b", "c", "d"], 2);
+let dog = {
+  name: "Max",
+  numLegs: 4,
+  sayLegs: function() {return "My dog has " + numLegs + " Legs."}
+};
+console.log(dog.name , dog.numLegs , dog.sayLegs());
+//Make Code More Reusable with the this Keyword.
+let cat = {
+  name: "Betty",
+  numLegs: 4,
+  sayLegs: function() {"My cat has " + this.numLegs + " Legs"}
+}
+console.log(cat.sayLegs());
