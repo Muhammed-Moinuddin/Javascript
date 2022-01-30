@@ -1430,3 +1430,29 @@ let cat = {
   sayLegs: function() {"My cat has " + this.numLegs + " Legs"}
 }
 console.log(cat.sayLegs());
+//Constructor Functions
+function Parrot() {
+  this.name = "Harry";
+  this.color = "Green";
+  this.numLegs = 2;
+}
+//Use a Constructor to Create Objects
+let Macawparrot = new Parrot();
+//Changing its properties via long way
+Macawparrot.name = "Alexa";
+Macawparrot.color = "Blue";
+//Creating Constructor which will make it easy for editing values for instances.Extend Constructors to Receive Arguments
+function Car(name , color) {
+  this.name = name;
+  this.color = color;
+  this.numTyres = 4;
+}
+let ferrari = new Car("ferrari 101", "Red");
+//Verify an Object's Constructor with instanceof
+let lamborghini = {
+  name: "Lamborghini 101",
+  color: "Black",
+  numTyres: 4
+};
+console.log(lamborghini instanceof Car); //false
+console.log(ferrari instanceof Car); //true
