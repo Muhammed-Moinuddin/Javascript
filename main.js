@@ -1456,3 +1456,11 @@ let lamborghini = {
 };
 console.log(lamborghini instanceof Car); //false
 console.log(ferrari instanceof Car); //true
+//Understand Own Properties
+let ownProps = [];
+for (let property in Car) {
+  if (Car.hasOwnProperty(property)) {
+    ownProps.push(property);
+  }
+};
+console.log(ownProps);
