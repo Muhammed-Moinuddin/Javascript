@@ -1464,3 +1464,48 @@ for (let property in Car) {
   }
 };
 console.log(ownProps);
+//Use Prototype Properties to Reduce Duplicate Code
+Car.prototype.gearType = "auto";
+console.log(lamborghini.gearType);
+//Iterate Over All Properties
+function Insects(name,color) {
+  this.name = name;
+  this.color = color;
+}
+Insects.prototype.numLegs = 6;
+let insect1 = new Insects("Cockroach", "Brown");
+let ownProperty = [];
+let prototypeProperty = [];
+for (let property in insect1) {
+  if (insect1.hasOwnProperty(property)) {
+    ownProperty.push(property);
+  }
+  else
+  {
+    prototypeProperty.push(property);
+  }
+}
+console.log(ownProperty);
+console.log(prototypeProperty);
+//Understand the Constructor Property
+function checkInsect(candidate) {
+  if (candidate.constructor === Insects) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(checkInsect(insect1));
+//Change the Prototype to a New Object
+function Birds(name){
+  this.name = name;
+}
+Birds.prototype = {
+  numLegs : 2,
+  eat : function() {
+    console.log("eat eat & just eat");
+  },
+  describe : function() {
+    console.log("My name is " + this.name);
+  }
+};
