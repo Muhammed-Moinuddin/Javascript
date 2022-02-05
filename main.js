@@ -1501,6 +1501,7 @@ function Birds(name){
   this.name = name;
 }
 Birds.prototype = {
+  constructor: Birds,     // here
   numLegs : 2,
   eat : function() {
     console.log("eat eat & just eat");
@@ -1509,3 +1510,10 @@ Birds.prototype = {
     console.log("My name is " + this.name);
   }
 };
+//Remember to Set the Constructor Property when Changing the Prototype
+/*There is one crucial side effect of manually setting the prototype to a new object. It erases the constructor property!
+This property can be used to check which constructor function created the instance, but since the property has been overwritten, it now gives false results:
+To fix this, whenever a prototype is manually set to a new object, remember to define the constructor property: Like done in above code*/
+//Understand Where an Object’s Prototype Comes From
+let sparrow = new Birds("Yeni");
+Birds.prototype.isPrototypeOf(sparrow); // will return true.
