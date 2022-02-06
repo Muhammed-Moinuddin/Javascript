@@ -1517,3 +1517,40 @@ To fix this, whenever a prototype is manually set to a new object, remember to d
 //Understand Where an Object’s Prototype Comes From
 let sparrow = new Birds("Yeni");
 Birds.prototype.isPrototypeOf(sparrow); // will return true.
+//Understand the Prototype Chain
+Object.prototype.isPrototypeOf(Birds.prototype); // will return true.
+//Use Inheritance So You Don't Repeat Yourself
+function Cat(name) {
+  this.name = name;
+}
+Cat.prototype = {
+  constructor : Cat,
+}
+function Bear(name) {
+  this.name = name;
+}
+Bear.prototype = {
+  constructor : Bear,
+}
+function Animal() { };
+
+Animal.prototype = {
+  constructor: Animal,
+  eat : function() {
+    console.log("nom nom nom");
+  }
+}
+/*Above code can also be written as
+Animal.prototype.eat = function() {
+  console.log("nom nom nom");
+}
+let animal = new Animal(); <- this type of instance creation has some issues in terms of inheritance so we r going to use a new method.
+*/
+//Inherit Behaviors from a Supertype
+let lion = Object.create(Animal.prototype);
+let leopard = Object.create(Animal.prototype);
+//Set the Child's Prototype to an Instance of the Parent
+Cat.prototype = Object.create(Animal.prototype);
+let bigCats = new Cat("cheetah");
+bigCats.eat();
+//bigCats inherits all of Animal's properties, including the eat method.
