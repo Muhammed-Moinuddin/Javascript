@@ -1551,6 +1551,54 @@ let lion = Object.create(Animal.prototype);
 let leopard = Object.create(Animal.prototype);
 //Set the Child's Prototype to an Instance of the Parent
 Cat.prototype = Object.create(Animal.prototype);
+Cat.prototype.constructor = Cat;                      //here
 let bigCats = new Cat("cheetah");
 bigCats.eat();
 //bigCats inherits all of Animal's properties, including the eat method.
+//Reset an Inherited Constructor Property
+/*When an object inherits its prototype from another object, it also inherits the supertype's constructor property.
+ that's why we manually set the constructor property of Cat to the Cat object in upper code */
+ //Add Methods After Inheritance
+function House() { };
+House.prototype.rooms = function() {
+  console.log("There are rooms");
+}
+function CamperVan() { }
+CamperVan.prototype = Object.create(House.prototype);
+CamperVan.prototype.constructer = CamperVan;
+CamperVan.prototype.facilities = function() {
+  console.log("There are all facilities available in here");
+}
+let AngilaVan =  new CamperVan();
+AngilaVan.facilities();
+AngilaVan.rooms();
+//Override Inherited Methods
+function Bird2() { };
+Bird2.prototype.fly = function() {
+  return "I am Flying";
+}
+function Penguin() { }
+Penguin.prototype = Object.create(Bird2.prototype);
+Penguin.prototype.constructor = Penguin;
+
+Penguin.prototype.fly = function() {
+  return "Alas! these birds can not Fly";
+}
+let penguin = new Penguin();
+console.log(penguin.fly()); // Will print Alas! these birds can not Fly.
+//Use a Mixin to Add Common Behavior Between Unrelated Objects
+let boat = {
+  name : "Speeder Boat",
+  type : "SuperJet"
+}
+let bird = {
+  name : "Mimi Penguin",
+  numLegs : 2
+}
+let glideMixin = function(obj) {
+  obj.glide = function() {
+    console.log("Just Glide Man!")
+  }
+}
+glideMixin(boat);
+glideMixin(bird);
