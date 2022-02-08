@@ -1602,3 +1602,14 @@ let glideMixin = function(obj) {
 }
 glideMixin(boat);
 glideMixin(bird);
+//Use Closure to Protect Properties Within an Object from Being Modified Externally
+//In the previous challenge, bird had a public property name. It is considered public because it can be accessed and changed outside of bird's definition
+//The simplest way to make this public property private is by creating a variable within the constructor function.
+function Bird3() {
+  let hatchedEgg = 10; // like this
+  this.getHatchedEggCount = function() {
+    return hatchedEgg;
+  }
+}
+let eagle = new Bird();
+console.log(eagle.getHatchedEggCount());
