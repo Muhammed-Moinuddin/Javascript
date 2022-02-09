@@ -1613,3 +1613,22 @@ function Bird3() {
 }
 let eagle = new Bird();
 console.log(eagle.getHatchedEggCount());
+//Understand the Immediately Invoked Function Expression (IIFE)
+(function () {
+  console.log("A cozy nest is ready");
+}) ();
+//Use an IIFE to Create a Module
+let funModule = (function () {
+  return {
+    isCuteMixin : function(obj) {
+    obj.isCute = function() {
+      return true;
+    };
+  },
+  singMixin : function(obj) {
+    obj.sing = function() {
+      console.log("Singing to an awesome tune");
+      };
+    }
+  }
+  }) ();
