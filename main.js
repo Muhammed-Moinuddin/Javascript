@@ -1632,3 +1632,19 @@ let funModule = (function () {
     }
   }
   }) ();
+  //
+  function convertToRoman(num) {
+    let newNumLength = num.toString().length;
+    let newNum = num.toString();
+    let newArr = [];
+    for (let i = 0; i < newNumLength; i++) {
+      let var1 = newNum.charAt(i);
+      for (let j = newNumLength - (i+1); j > 0; j--) {
+        var1 = var1 + "0";
+      }
+      newArr.push(var1);
+    }
+    console.log(newArr);
+  }
+
+  convertToRoman(986);
