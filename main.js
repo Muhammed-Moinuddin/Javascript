@@ -1648,7 +1648,7 @@ let funModule = (function () {
   }
 
   convertToRoman(986);
-  //Learn About Functional Programming
+//Learn About Functional Programming
 const prepareTea = () => 'greenTea';
 
 const getTea = (numOfCups) => {
@@ -1661,3 +1661,46 @@ const getTea = (numOfCups) => {
   return teaCups;
 };
 const tea4TeamFCC = getTea(40);
+
+const prepareBlackCoffee = () => "Black Cofee";
+const getCoffee = (numOfCups) => {
+  const coffeeCups = [];
+  for (let cups = 0 ; cup <= numOfCups ; cups++) {
+    const coffeeCups = prepareBlackCoffee();
+    coffeeCups.push(prepareBlackCoffee);
+  }
+  return coffeeCups;
+};
+const teamBeingTechGeek = getCoffee(25);
+console.log(teamBeingTechGeek);
+//Javascript Callbacks
+function justDisplay(something1) {
+  let myVar1 = "The answer is " + something1 ;
+  console.log(myVar1);
+}
+function calculatingSomething(calculateVar1 , calculateVar2 , justDisplay) {
+  let sum1 = calculateVar1 + calculateVar2;
+  justDisplay(sum1);
+}
+calculatingSomething(9,8,justDisplay);
+//Understand Functional Programming Terminology
+/*
+With that information, we'll need to revisit the getWallColor function from last challenge to handle various tea requests.
+We can modify getWallColor to accept a function as a parameter to be able to change the type of tea it prepares.
+This makes getWallColor more flexible, and gives the programmer more control when client requests change.
+*/
+const wallColorGreen = () => "Green should be the color of the wall";
+const wallColorRed = () => "Red should be the color of the wall";
+
+const getWallColor = (wallColor,numOfPaintTin) => {
+  const paintWall = [];
+  for (let tin = 0 ; tin <= numOfPaintTin ; tin++) {
+    const paintWall = wallColor();
+    paintWall.push(wallColor);
+  }
+  return paintWall;
+}
+const teamBeingTechGeekGreen = getWallColor(wallColorGreen,5);
+console.log(teamBeingTechGeekGreen);
+const teamBeingTechGeekRed = getWallColor(wallColorRed,5);
+console.log(teamBeingTechGeekRed);
