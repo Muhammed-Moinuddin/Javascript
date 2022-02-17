@@ -1705,22 +1705,21 @@ console.log(teamBeingTechGeekGreen);
 const teamBeingTechGeekRed = getWallColor(wallColorRed,5);
 console.log(teamBeingTechGeekRed);
 //Understand the Hazards of Using Imperative Code
-// tabs is an array of titles of each site open within the window
+//tab is an array of the titles of each site open in a window tab
 const Window = function(tabs) {
   this.tabs = tabs; // We keep a record of the array inside the object
 };
 
-// When you join two windows into one window
+//When you join two windows into one window
 Window.prototype.join = function(otherWindow) {
   this.tabs = this.tabs.concat(otherWindow.tabs);
   return this;
-};
-
-// When you open a new tab at the end
+}
+//When you open a new tab in the end
 Window.prototype.tabOpen = function(tab) {
-  this.tabs.push('new tab'); // Let's open a new tab for now
+  this.tabs.push("new tab");
   return this;
-};
+}
 
 // When you close a tab
 Window.prototype.tabClose = function(index) {
@@ -1748,3 +1747,43 @@ const finalTabs = socialWindow
   .join(videoWindow.tabClose(2)) // Close third tab in video window, and join
   .join(workWindow.tabClose(1).tabOpen());
 console.log(finalTabs.tabs);
+
+//Avoid Mutations and Side Effects Using Functional Programming
+let fixedValue = 4; // Global Variable
+function incrementer(fixedValue) {
+  return fixedValue + 1;
+}
+console.log(incrementer); // Global variable is not disturbed
+
+//Refactor Global Variables Out of Functions
+const bookList = ["moin" , "shahzaib" , "ayan" , "inshal" , "osama"];
+const newBookList = bookList.slice(); // making a copy
+
+function addBookName(newBookList,bookName) {
+  newBookList.push(bookName);
+  return newBookList;
+}
+
+function removeBookName(newBookList,bookName) {
+  const bookIndex = newBookList.indexOf(bookName);
+  if (bookIndex >= 0) {
+    newBookList.splice(bookIndex,1);
+    return newBookList;
+  };
+}
+console.log(addBookName(newBookList,"ali"));
+console.log(removeBookName(newBookList,"moin"));
+
+//Use the map Method to Extract Data from an Array
+const user = [
+  {name: "Moin" , age: 20 , class: "Third Semester"},
+  {name: "Shahzaib" , age: 21 , class: "Fifth Semester"},
+  {name: "Ayan" , age: 20 , class: "Fourth Semester"},
+  {name: "Ameen" , age: 22 , class: "Sixth Semester"}
+];
+const ids = user.map(check);
+function check(user){
+  return ({greatname : user["name"] , bestage :user[age]});
+}
+
+console.log(JSON.stringify(ids));
