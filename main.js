@@ -1787,3 +1787,38 @@ function check(user){
 }
 
 console.log(JSON.stringify(ids));
+// map (The map() method creates a new array populated with the results of calling a provided function on every element in the calling array.)
+const array3 = [1,3,5,7,9];
+const map1 = array3.map(x => x*2);
+console.log(map1);
+//In other words, map is a pure function, and its output depends solely on its inputs. Plus, it takes another function as its argument.
+//Implement map on a prototype (Basically understanding concept of map by creating our own map method).
+const s3 = [21,34,9,16]; // global variable
+Array.prototype.myMap = function(callback) {
+  const myNewArray = [];
+  for (let i = 0 ; i < s3.length ; i++) {
+    myNewArray.push(callback(s3[i]));
+  }
+  return myNewArray;
+}
+const new_s3 = s3.myMap(function(item){
+  return item * 2;
+});
+console.log(new_s3);
+console.log(s3);
+//Using .forEach()
+// The global variable
+Array.prototype.myMap = function(callback) {
+  const newArray1 = [];
+  // Only change code below this line
+    s.forEach((word) => {
+  newArray1.push(callback(word));})
+  // Only change code above this line
+  return newArray1;
+};
+
+const new_s = s.myMap(function(item) {
+  return item * 2;
+});
+console.log(new_s);
+console.log(s);
