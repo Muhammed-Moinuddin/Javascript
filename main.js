@@ -1822,3 +1822,80 @@ const new_s = s.myMap(function(item) {
 });
 console.log(new_s);
 console.log(s);
+//Just an example learning .map()
+newarray1 = [1,3,5,7,9];
+const newarray2 = [...newarray1];
+const map2 = array1.map(checkCallback);
+function checkCallback(num, index, array) {
+  var1 = num + index;
+  newarray2.push(var1);
+  return var1;
+}
+console.log(map2);
+console.log(newarray2);
+//Use the filter Method to Extract Data from an Array
+// The global variable
+const watchList = [
+  {
+    "Title": "Inception",
+    "Year": "2010",
+    "Rated": "PG-13",
+    "Released": "16 Jul 2010",
+    "Language": "English, Japanese, French",
+    "Country": "USA, UK",
+    "Awards": "Won 4 Oscars. Another 143 wins & 198 nominations.",
+    "Metascore": "74",
+    "imdbRating": "8.8",
+    "imdbVotes": "1,446,708",
+  },
+  {
+    "Title": "Interstellar",
+    "Year": "2014",
+    "Rated": "PG-13",
+    "Released": "07 Nov 2014",
+    "Language": "English",
+    "Country": "USA, UK",
+    "Awards": "Won 1 Oscar. Another 39 wins & 132 nominations.",
+    "Metascore": "74",
+    "imdbRating": "8.6",
+  },
+  {
+    "Title": "The Dark Knight",
+    "Year": "2008",
+    "Rated": "PG-13",
+    "Released": "18 Jul 2008",
+    "Language": "English, Mandarin",
+    "Country": "USA, UK",
+    "Awards": "Won 2 Oscars. Another 146 wins & 142 nominations.",
+    "Metascore": "82",
+    "imdbRating": "9.0",
+  },
+  {
+    "Title": "Batman Begins",
+    "Year": "2005",
+    "Rated": "PG-13",
+    "Released": "15 Jun 2005",
+    "Language": "English, Urdu, Mandarin",
+    "Country": "USA, UK",
+    "Awards": "Nominated for 1 Oscar. Another 15 wins & 66 nominations.",
+    "Metascore": "70",
+  },
+  {
+    "Title": "Avatar",
+    "Year": "2009",
+    "Rated": "PG-13",
+    "Released": "18 Dec 2009",
+    "Runtime": "162 min",
+    "Language": "English, Spanish",
+    "Country": "USA, UK",
+    "Awards": "Won 3 Oscars. Another 80 wins & 121 nominations.",
+    "Metascore": "83",
+    "imdbRating": "7.9",
+
+  }
+];
+const filteredList = watchList.map(checkFunction).filter(watchListItem => parseInt(watchListItem["rating"]) >= 8.0);
+function checkFunction(watchListItem){
+  return {title: watchListItem["Title"] , rating: watchListItem["imdbRating"]}
+};
+console.log(filteredList);
