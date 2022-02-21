@@ -1920,3 +1920,27 @@ function sliceArray(anim,beginSlice,endSlice){
 };
 const inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
 console.log(sliceArray(inputAnim,1,3));
+//Combine Two Arrays Using the concat Method
+function nonMutatingConcat(first,second) {
+//return first.push(second);
+  return first.concat(second);
+}
+const first = [1,2,3,4,5];
+const second = [5,6,7,8,9];
+console.log(nonMutatingConcat(first,second));
+//.concat can be replaced with .push
+//Use the reduce Method to Analyze Data
+const someUsers = [
+  {name: "Abbas" , age: 21},
+  {name: "Bilal" , age: 22},
+  {name: "Candy" , age: 20},
+  {name: "Danny" , age: 16}
+];
+const sumOfSomeUsers = someUsers.reduce((sum,someUser) => sum + someUser.age , 0);
+console.log(sumOfSomeUsers);
+//Another Example
+const objOfSomeUsers = someUsers.reduce((obj , user) => {
+  obj[user.name] = user.age ;
+  return obj;
+} , {});
+console.log(objOfSomeUsers);
