@@ -1899,3 +1899,24 @@ function checkFunction(watchListItem){
   return {title: watchListItem["Title"] , rating: watchListItem["imdbRating"]}
 };
 console.log(filteredList);
+//Implement the filter Method on a Prototype
+const s4 = [23,65,98,5];
+Array.prototype.myFilter = function(callback) {
+  const newArray4 = [];
+  for (let i = 0 ; i < s.length ; i++) {
+    if (callback(s[i]) == true) {
+      newArray4.push(s[i]);
+    }
+  }
+  return newArray4;
+}
+const new_s4 = s.myFilter(function(item){
+  return item % 2 === 1;
+});
+console.log(new_s4);
+//Return Part of an Array Using the slice Method
+function sliceArray(anim,beginSlice,endSlice){
+  const newArray = anim.slice(beginSlice,endSlice);
+};
+const inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
+console.log(sliceArray(inputAnim,1,3));
