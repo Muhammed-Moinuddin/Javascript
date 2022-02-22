@@ -1944,3 +1944,38 @@ const objOfSomeUsers = someUsers.reduce((obj , user) => {
   return obj;
 } , {});
 console.log(objOfSomeUsers);
+//
+const checkItems = [
+  { name: "Rice", price: 5 },
+  { name: "Book", price: 10 },
+  { name: "Chicken", price: 15 },
+  { name: "Monitor", price: 20 }
+];
+/*let totalPriceCheckItems = 0;
+checkItems.forEach((item) => {
+  totalPriceCheckItems += item.price;
+});
+console.log(totalPriceCheckItems);
+*/
+const totalPrice = checkItems.reduce((total , item) => {
+  return total + item.price;
+} , 0);
+console.log(totalPrice);
+
+const people = [
+  {name: "Moin" , age: 21},
+  {name: "Shahzaib" , age: 33},
+  {name: "Ayan" , age: 19},
+  {name: "Inshal" , age: 41},
+  {naem: "Arbaz" , age: 19}
+];
+
+const resultPeople = people.reduce((groupedPeople , eachPeople) => {
+    const age = eachPeople.age;
+    if (groupedPeople[age] == null) {
+      groupedPeople[age] = [];
+    }
+    groupedPeople[age].push(eachPeople);
+    return groupedPeople;
+} , {});
+console.log(resultPeople);
