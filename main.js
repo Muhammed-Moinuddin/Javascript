@@ -1979,3 +1979,44 @@ const resultPeople = people.reduce((groupedPeople , eachPeople) => {
     return groupedPeople;
 } , {});
 console.log(resultPeople);
+//
+const fruitItems = [
+  {fruitName: 'Banana' , quantity: 12},
+  {fruitName: 'Apple' , quantity: 9},
+  {fruitName: 'Watermelon' , quantity: 11}
+];
+
+const resultFruitList = fruitItems.reduce((totalFruits , eachFruit) => {
+  totalFruits[eachFruit.fruitName] = eachFruit.quantity;
+  return totalFruits;
+},{});
+
+console.log(resultFruitList);
+//Use the reduce Method to Analyze Data
+const myList = [
+  { word: "Hello", writer: "Moin", rating: "9.2" },
+  { word: "My", writer: "Moin", rating: "8.2" },
+  { word: "name", writer: "Abbass , Mastan", rating: "8.7" },
+  { word: "is", writer: "Moin", rating: "9.1" },
+  { word: "something", writer: "Shahzaib", rating: "7.2" }
+];
+function getRating(myList) {
+  let shortList = myList
+    .map((eachItem) => ({
+      Writer: eachItem["writer"],
+      Rating: eachItem["rating"] * 1
+    }))
+    .filter((eachItem) => eachItem["Writer"] == "Moin");
+  let beforeAverage = shortList.reduce((sum, eachItem) => {
+    return sum + eachItem["Rating"];
+  }, 0);
+  return beforeAverage / shortList.length;
+}
+console.log(getRating(myList));
+//Use Higher-Order Functions map, filter, or reduce to Solve a Complex Problem
+const squareList = arr => {
+  return arr.filter((arr) => arr = arr > 0 && arr % parseInt(arr) === 0).map((arr) => arr*arr);
+}
+
+const squareIntegers = [-2,6.3,4,-3.7,3];
+console.log(squareList(squareIntegers));
