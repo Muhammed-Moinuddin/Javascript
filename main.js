@@ -2020,3 +2020,42 @@ const squareList = arr => {
 
 const squareIntegers = [-2,6.3,4,-3.7,3];
 console.log(squareList(squareIntegers));
+//Sort an Array Alphabetically using the sort Method
+function alphabeticalOrder(someStringArray){
+  return someStringArray.sort(function(a,b){
+   if (a === b) {
+     return 0
+    } else if (a < b) {
+      return -1
+    } else {
+      return 1
+    }}
+  )
+}
+let someString = "My name is Moin and what about you";
+let someStringNoWhitespace = someString.toLowerCase().replace(/\s/g , "");
+let someStringArray = someStringNoWhitespace.split("");
+
+console.log(alphabeticalOrder(someStringArray));
+//Return a Sorted Array Without Changing the Original Array
+const globalArray = [5, 6, 3, 2, 9];
+function nonMutatingSort(arr) {
+  const newArr = arr.slice();
+  return newArr.sort(function(a,b){
+    return a - b;
+  })
+}
+
+nonMutatingSort(globalArray);
+//Split a String into an Array Using the split Method
+function splitify(str) {
+  return str.split(/[,.-\s]/g);
+}
+
+console.log(splitify("Hello World,I-am code"));
+//Combine an Array into a String Using the join Method
+function sentensify(str) {
+  let newStr = str.split(/[,.-\s]/g);
+  return newStr.join(" ");
+}
+console.log(sentensify("May-the-force-be-with-you"));
