@@ -2059,3 +2059,20 @@ function sentensify(str) {
   return newStr.join(" ");
 }
 console.log(sentensify("May-the-force-be-with-you"));
+//Apply Functional Programming to Convert Strings to URL Slugs
+function urlSlug(title) {
+  const newTitle = title.toLowerCase().split(" ");
+  const check = newTitle.filter((arr) => {if (arr != " "){
+    return arr;
+  }})
+  return check.join("-")
+ }
+ urlSlug(" Winter Is  Coming");
+ //Use the every Method to Check that Every Element in an Array Meets a Criteria
+const arr4New = [1,-3,5,-7,9,11]
+ function checkPositive(arr4New) {
+  return arr4New.every(function(eachValue) {
+    return eachValue > 0;
+  })
+}
+console.log(checkPositive(arr4New));
