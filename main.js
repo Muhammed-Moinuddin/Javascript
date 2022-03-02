@@ -2076,3 +2076,40 @@ const arr4New = [1,-3,5,-7,9,11]
   })
 }
 console.log(checkPositive(arr4New));
+//Use the some Method to Check that Any Elements in an Array Meet a Criteria
+const arr5New = [1,3,5,-7,9,11];
+function checkArr5New(arr5New){
+  return arr5New.some(function(eachItem) {
+    return eachItem < 0;
+  });
+}
+console.log(checkArr5New(arr5New));
+//Introduction to Currying and Partial Application
+function UnCurried(x, y) {
+  return x + y;
+}
+function Curried(x) {
+  return function (y) {
+    return x + y;
+  };
+}
+// Short Way : const Curried = x => y => x + y
+console.log(UnCurried(1, 3));
+//Short Form : console.log(Carried(1)(2));
+const functionForY = Curried(1);
+console.log(functionForY(8));
+//partial application
+function impartial(x,y,z){
+  return x+y+z;
+};
+const partial = impartial.bind(this,1,2);
+console.log(partial(8));
+//Original Code
+function justAdd(x) {
+    return function(y) {
+       return function(z) {
+         return x + y + z;
+       }
+  }
+}
+console.log(justAdd(10)(20)(30));
