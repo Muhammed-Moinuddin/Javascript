@@ -2151,3 +2151,20 @@ function diffArray(arr1, arr2) {
 }
 
 console.log(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
+//Seek and Destroy
+function destroyer(arr) {
+  const checkArr = [];
+  for (let i = 1 ; i < arguments.length ; i++) {
+    checkArr.push(arguments[i])
+  }
+  const newArr = arr.filter(checkFunc);
+  function checkFunc(eachItem){
+    if (checkArr.includes(eachItem) == false) {
+      return eachItem;
+    }
+  }
+  return newArr;
+}
+
+console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
+//Wherefore art thou
