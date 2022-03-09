@@ -1218,7 +1218,7 @@ function longestWord(str) {
   return maxlength;
 };
 console.log(longestWord(sentence1));
-let sentence1 = "Moin is here to help you out so just cheerup and be confident"
+let sentence11 = "Moin is here to help you out so just cheerup and be confident"
 //Return Largest Numbers in Arrays
 function largestOfFour(arr) {
   let arrLength = arr.length;
@@ -1775,13 +1775,13 @@ console.log(addBookName(newBookList,"ali"));
 console.log(removeBookName(newBookList,"moin"));
 
 //Use the map Method to Extract Data from an Array
-const user = [
+const user11 = [
   {name: "Moin" , age: 20 , class: "Third Semester"},
   {name: "Shahzaib" , age: 21 , class: "Fifth Semester"},
   {name: "Ayan" , age: 20 , class: "Fourth Semester"},
   {name: "Ameen" , age: 22 , class: "Sixth Semester"}
 ];
-const ids = user.map(check);
+const ids = user11.map(check);
 function check(user){
   return ({greatname : user["name"] , bestage :user[age]});
 }
@@ -2113,3 +2113,41 @@ function justAdd(x) {
   }
 }
 console.log(justAdd(10)(20)(30));
+//
+//Sum All Numbers in a Range
+function sumAll(arr) {
+  let sum = 0;
+  if (arr[0] < arr[1]){
+    for(let i = arr[0] ; i <= arr[1] ; i++){
+      sum = sum + i;
+    }
+  }
+  else
+  {
+    for(let i = arr[1] ; i <= arr[0] ; i++){
+      sum = sum + i;
+    }
+  }
+  return sum;
+}
+
+console.log(sumAll([1, 4]));
+//Diff Two Arrays
+function diffArray(arr1, arr2) {
+  const newArr = [];
+  let arr3 = arr1.concat(arr2);
+  for (let i = 0 ; i < arr3.length ; i++) {
+    if (newArr.includes(arr3[i]) == false) {
+      newArr.push(arr3[i]);
+    }
+  }
+  const giveArray = newArr.filter(check);
+  function check(each){
+    if (arr1.includes(each) == false || arr2.includes(each) == false) {
+      return each;
+    }
+  }
+  return giveArray
+}
+
+console.log(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]));
