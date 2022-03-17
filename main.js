@@ -2366,3 +2366,68 @@ function whatIsInAName(collection, source) {
  }
 
  console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
+//Spinal Tap Case
+ function spinalCase(str) {
+  let newStr = str.split("");
+  let check = /[A-Z]+/
+  let space = /\s/
+  let newArr = [];
+  //console.log(newStr);
+  for(let i = 0 ; i < newStr.length ; i++) {
+    if (newStr[i] == " ") {
+      newArr.push("-")
+
+    }else if (check.test(newStr[i]) == false || newStr[i] == newStr[0] ) {
+      if (newStr[i] !== "_") {
+          newArr.push(newStr[i].toLowerCase());
+      }
+  } else if (check.test(newStr[i]) == true){
+      if (space.test(newStr[i - 1]) == false ) {
+        newArr.push("-") && newArr.push(newStr[i].toLowerCase())
+      } else {
+        newArr.push(newStr[i].toLowerCase())
+      }
+    }
+  }
+
+return newArr.join("")
+}
+console.log(spinalCase('AllThe-small Things'));
+//Spinal Tap Case official
+function spinalCase(str) {
+  let strRegex = /\s+|_+/g ;
+  str =  str.replace(/([a-z])([A-Z])/g, "$1 $2");
+  return str.replace(strRegex , "-").toLowerCase();
+}
+
+console.log(spinalCase('thisIsSpinalTap'));
+//Pig Latin
+function translatePigLatin(str) {
+  let regexConsonant = /^[bcdfghjklmnpqrstvwxyz]+/g ;
+  if (regexConsonant.test(str) == true) {
+    return str.replace(regexConsonant , "").concat(str.match(regexConsonant)).concat("ay")
+  } else {
+    return str.concat("way")
+  }
+}
+
+console.log(translatePigLatin("eight"));
+//Search and Replace
+function myReplace(str, before, after) {
+  let checkRegex = /[a-z]/g;
+  console.log(checkRegex.test(before[0]))
+  console.log(checkRegex.test(after[0]))
+  if (checkRegex.test(before[0]) == false && checkRegex.test(after[0]) == true) {
+    return str.replace(before , after.replace(after[0] , after[0].toUpperCase()));
+  }
+  else if (checkRegex.test(before[0]) == true || checkRegex.test(after[0]) == false)
+{
+  return str.replace(before , after.replace(after[0] , after[0].toLowerCase()))
+}
+else
+{
+  return str.replace(before,after)
+}
+}
+
+console.log(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"));
