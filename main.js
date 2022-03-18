@@ -2450,4 +2450,44 @@ function pairElement(str) {
  return newArray;
  }
  console.log(pairElement("GCG"));
- 
+ //Official DNA Pairing
+ function pairElement(str) {
+  let pairArray = [];
+  var search = function (char) {
+    switch(char) {
+      case "A" :
+        pairArray.push(["A","T"])
+        break;
+      case "T" :
+        pairArray.push(["T","A"])
+        break;
+      case "C" :
+        pairArray.push(["C","G"])
+        break;
+      case "G" :
+        pairArray.push(["G","C"])
+        break;
+    }
+  }
+
+  for (let i = 0 ; i < str.length ; i++) {
+    search(str[i]);
+  }
+  return pairArray;
+}
+
+console.log(pairElement("GCG"));
+//Official DNA Pairing
+function pairElement(str) {
+  var pairs = {
+    A : "T",
+    T : "A",
+    C : "G",
+    G : "C"
+  }
+  return str.split("").map((each) => {
+    return [each , pairs[each]];
+  });
+}
+
+console.log(pairElement("GCG"));
