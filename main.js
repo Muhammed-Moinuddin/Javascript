@@ -2414,20 +2414,40 @@ function translatePigLatin(str) {
 console.log(translatePigLatin("eight"));
 //Search and Replace
 function myReplace(str, before, after) {
-  let checkRegex = /[a-z]/g;
+  let checkRegex = /[a-z]+/g;
   console.log(checkRegex.test(before[0]))
   console.log(checkRegex.test(after[0]))
   if (checkRegex.test(before[0]) == false && checkRegex.test(after[0]) == true) {
     return str.replace(before , after.replace(after[0] , after[0].toUpperCase()));
   }
-  else if (checkRegex.test(before[0]) == true || checkRegex.test(after[0]) == false)
+   else if (checkRegex.test(before[0]) == false )
 {
   return str.replace(before , after.replace(after[0] , after[0].toLowerCase()))
 }
-else
-{
-  return str.replace(before,after)
-}
 }
 
-console.log(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"));
+console.log(myReplace("I think we should look up there", "up", "Down"));
+//DNA Pairing
+function pairElement(str) {
+  const obj = {
+    "G" : "C",
+    "C" : "G",
+    "A" : "T",
+    "T" : "A"
+  }
+ let arr = [];
+ const newArray = [];
+ str.split("").filter(eachValue => {
+   if (obj.hasOwnProperty(eachValue)) {
+     arr.push(eachValue)
+     arr.push(obj[eachValue])
+     newArray.push(arr)
+     arr = []
+ }
+ })
+
+
+ return newArray;
+ }
+ console.log(pairElement("GCG"));
+ 
