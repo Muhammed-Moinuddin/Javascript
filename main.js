@@ -2491,3 +2491,40 @@ function pairElement(str) {
 }
 
 console.log(pairElement("GCG"));
+//Missing Letters
+function fearNotLetter(str) {
+  let alphabetArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+  let strArray = alphabetArray.slice(alphabetArray.indexOf(str[0]) , alphabetArray.indexOf(str[str.length - 1]));
+  for (let i = 0 ; i < str.length ; i++) {
+    if (str[i] !== strArray[i]) {
+        return strArray[i]
+    }
+  }
+  }
+
+  console.log(fearNotLetter("stvwx"));
+//Missing Letters Official
+function checkNotLetter(str) {
+  for (let i = 0 ; i < str.length ; i++) {
+    var code = str.charCodeAt(i);
+    if (code !== str.charCodeAt(0) + i) {
+      return  String.fromCharCode(code - 1);
+    }
+  }
+  return undefined
+}
+console.log(checkNotLetter("defhij"));
+//Sorted Union
+function uniteUnique(arr) {
+  let newArr = []
+  for (let i = 0 ; i < arguments.length ; i++) {
+    for (let j = 0 ; j < arguments[i].length ; j++) {
+      if (newArr.includes(arguments[i][j]) == false) {
+          newArr.push(arguments[i][j])
+      }
+    }
+  }
+  return newArr;
+}
+
+console.log(uniteUnique([1, 3, 2, 3], [5, 2, 1, 4], [2, 1]));
