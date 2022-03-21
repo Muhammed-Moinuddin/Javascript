@@ -2528,3 +2528,42 @@ function uniteUnique(arr) {
 }
 
 console.log(uniteUnique([1, 3, 2, 3], [5, 2, 1, 4], [2, 1]));
+//
+function convertHTML(str) {
+  return str.replace(/&/g , "&amp;").replace(/</g , "&lt;").replace(/>/g , "&gt;").replace(/"/g , "&quot;").replace(/'/g , "&apos;");
+}
+
+convertHTML("Dolce & Gabbana");
+//
+function convertHTML(str) {
+  const htmlEntities = {
+    "<" : "&lt;",
+    '&' : "&amp;",
+    ">" : "&gt;",
+    '"' : "&quot;",
+    "'" : "&apos;"
+  }
+  console.log(htmlEntities["&"])
+  return str.split("").filter(eachValue => {
+   if (htmlEntities.hasOwnProperty(eachValue) != true) {
+     return eachValue
+   } else {
+     console.log(typeof(eachValue))
+     return htmlEntities[eachValue]
+   }
+  }).join("");
+}
+
+console.log(convertHTML("Dolce & Gabbana"));
+//
+function telephoneCheck(str) {
+  let regex = /(?<![0-9])^1(?=[\s|(|2-9|-])\D+/
+  let regex2 = /(?<![0-9])^1(?=[\s|(|2-9|-])\(?[\s(]?([0-9]{3})\)?[)-\s]?([0-9]{3})[-\s]?([0-9]{4})$/
+  return regex.test(str)
+}
+
+console.log(telephoneCheck("123**&!!asdf#"));
+
+/(?<![0-9])^1(?=[\s|(|2-9|-])/
+
+/(?<![0-9])^1(?=[\s|(|2-9|-|])\D+|^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
