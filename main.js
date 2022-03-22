@@ -2556,14 +2556,43 @@ function convertHTML(str) {
 
 console.log(convertHTML("Dolce & Gabbana"));
 //
+// function telephoneCheck(str) {
+//   let regex = /(?<![0-9])^1(?=[\s|(|2-9|-])\D+/
+//   let regex2 = /(?<![0-9])^1(?=[\s|(|2-9|-])\(?[\s(]?([0-9]{3})\)?[)-\s]?([0-9]{3})[-\s]?([0-9]{4})$/
+//   return regex.test(str)
+// }
+
+// console.log(telephoneCheck("123**&!!asdf#"));
+//Telephone Number Validator
 function telephoneCheck(str) {
-  let regex = /(?<![0-9])^1(?=[\s|(|2-9|-])\D+/
-  let regex2 = /(?<![0-9])^1(?=[\s|(|2-9|-])\(?[\s(]?([0-9]{3})\)?[)-\s]?([0-9]{3})[-\s]?([0-9]{4})$/
-  return regex.test(str)
+  let regex1 = /^1?\s?(\(\d{3}\)\s?\d{3}-\d{4})/;
+  let regex2 = /(^1?\s?\d{3}-\d{3}-\d{4})/;
+  let regex3 = /(\d{3}\s\d{3}\s\d{4})/;
+  let regex4 = /(^\d{10}$)/;
+  if (regex1.test(str) == true) {
+    return true;
+  }
+  else if (regex2.test(str) == true) {
+    return true;
+  }
+  else if (regex3.test(str) == true) {
+    return true;
+  }
+  else if (regex4.test(str) == true) {
+    return true;
+  }
+  else {
+    return false
+  }
 }
 
-console.log(telephoneCheck("123**&!!asdf#"));
+console.log(telephoneCheck("1 (555) 555-5555"));
 
-/(?<![0-9])^1(?=[\s|(|2-9|-])/
+// /(1?\s?\(\d{3}\)?[ ]\d{3}-\d{4})/
+// /(\(\d{3}\)\s\d{3}-\d{4})/;
 
-/(?<![0-9])^1(?=[\s|(|2-9|-|])\D+|^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
+
+// /(1?\s?\d{3}-\d{3}-\d{4})/
+// /1?\s?(\(\d{3}\)\s?\d{3}-\d{4})/
+// /(\d{3}\s\d{3}\s\d{4})/
+// /(\d{10})/
