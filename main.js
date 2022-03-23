@@ -2596,3 +2596,52 @@ console.log(telephoneCheck("1 (555) 555-5555"));
 // /1?\s?(\(\d{3}\)\s?\d{3}-\d{4})/
 // /(\d{3}\s\d{3}\s\d{4})/
 // /(\d{10})/
+//Telephone Number Validator Modified
+function telephoneCheck(str) {
+  let regex = /^1?\s?(\(\d{3}\)\s?\d{3}-\d{4})|(^1?\s?\d{3}-\d{3}-\d{4})|(\d{3}\s\d{3}\s\d{4})|(^\d{10}$)/;
+  return regex.test(str);
+}
+
+console.log(telephoneCheck("1 (555) 555-5555"));
+//Cash Register
+function checkCashRegister(price, cash, cid) {
+  let answer = {
+    change : []
+  };
+  let obj = {
+    "PENNY" : 0.01,
+    "NICKEL" : 0.05,
+    "DIME" : 0.1,
+    "QUARTER" : 0.25,
+    "ONE" : 1,
+    "FIVE" : 5,
+    "TEN" : 10,
+    "TWENTY" : 20
+  }
+  let difference = cash - price;
+  let check = cid.filter(eachArray => difference > obj[eachArray[0]])
+  let sum = 0;
+  for (let i = 0 ; i < check.length ; i++) {
+    sum = sum + check[i][1]
+  }
+  let checkextra = check.filter(someFunction);
+  function someFunction(eachArray){
+     if (sum > difference | eachArray[1] >= difference ) {
+          return eachArray
+   }
+  }
+  for (let i = checkextra.length - 1 ; i > 0 ; i--) {
+     for (let j = 0 ; j < checkextra[i][1] / obj[checkextra[i][0]] ; j++) {
+
+        answer["change"].push(checkextra[i]);
+    }
+  }
+  console.log(checkextra[7][1] / obj[checkextra[7][0]])
+  console.log(obj.length)
+  console.log(check)
+  console.log(sum)
+  console.log(checkextra)
+  return answer;
+}
+
+console.log(checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]));
