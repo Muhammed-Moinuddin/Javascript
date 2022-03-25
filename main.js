@@ -2645,3 +2645,61 @@ function checkCashRegister(price, cash, cid) {
 }
 
 console.log(checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]));
+
+function checkCashRegister(price, cash, cid) {
+  let answer = {
+    change : []
+  };
+  let obj = {
+    "PENNY" : 0.01,
+    "NICKEL" : 0.05,
+    "DIME" : 0.1,
+    "QUARTER" : 0.25,
+    "ONE" : 1,
+    "FIVE" : 5,
+    "TEN" : 10,
+    "TWENTY" : 20
+  }
+  let difference = cash - price;
+  let check = cid.filter(eachArray => difference > obj[eachArray[0]])
+  let sum = 0;
+  for (let i = 0 ; i < check.length ; i++) {
+    sum = sum + check[i][1]
+  }
+  let checkextra = check.filter(someFunction);
+  function someFunction(eachArray){
+     if (sum > difference | eachArray[1] >= difference ) {
+          return eachArray
+   }
+  }
+   console.log(checkextra)
+  let full = 0;
+  for (let i = (checkextra.length-1) ; i >= 0; i--) {
+    let total = 0;
+    for (let j = 0 ; j < checkextra[i][1] / obj[checkextra[i][0]] ; j++) {
+      total = total + obj[checkextra[i][0]]
+      full = full + obj[checkextra[i][0]]
+      console.log(full)
+    if (total == checkextra[i][1]) {
+        answer["change"].push(checkextra[i]);
+        break;
+      } else if (full > difference) {
+        total = total - obj[checkextra[i][0]];
+        full  = full - obj[checkextra[i][0]]
+        checkextra[i].splice(1 , 1 , total)
+        answer["change"].push(checkextra[i]);
+        break;
+      }
+
+  }
+
+  }
+  // console.log(checkextra[7][1] / obj[checkextra[7][0]])
+  // console.log(obj.length)
+   //console.log(checkextra)
+  // console.log(sum)
+   //console.log(answer["change"].push(checkextra[1]))
+  return answer;
+}
+
+console.log(checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]));
