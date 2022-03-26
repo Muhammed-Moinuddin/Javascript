@@ -2606,99 +2606,58 @@ console.log(telephoneCheck("1 (555) 555-5555"));
 //Cash Register
 function checkCashRegister(price, cash, cid) {
   let answer = {
+    status: "",
     change : []
-  };
-  let obj = {
-    "PENNY" : 0.01,
-    "NICKEL" : 0.05,
-    "DIME" : 0.1,
-    "QUARTER" : 0.25,
-    "ONE" : 1,
-    "FIVE" : 5,
-    "TEN" : 10,
-    "TWENTY" : 20
   }
-  let difference = cash - price;
-  let check = cid.filter(eachArray => difference > obj[eachArray[0]])
+  const obj = {
+    "PENNY" : 1,
+    "NICKEL" : 5,
+    "DIME" : 10,
+    "QUARTER" : 25,
+    "ONE" : 100,
+    "FIVE" : 500,
+    "TEN" : 1000,
+    "TWENTY" : 2000
+  }
+  //console.log(cid)
+  let difference = (cash - price)*100;
+  console.log(difference)
+  let check = cid.map(eachArray => [eachArray[0] , Math.round(eachArray[1]*100)]).filter(eachArray => difference > obj[eachArray[0]]);
   let sum = 0;
-  for (let i = 0 ; i < check.length ; i++) {
-    sum = sum + check[i][1]
+  for (let i = 0; i < check.length; i++) {
+    sum = sum + check[i][1];
   }
-  let checkextra = check.filter(someFunction);
-  function someFunction(eachArray){
-     if (sum > difference | eachArray[1] >= difference ) {
-          return eachArray
-   }
-  }
-  for (let i = checkextra.length - 1 ; i > 0 ; i--) {
-     for (let j = 0 ; j < checkextra[i][1] / obj[checkextra[i][0]] ; j++) {
-
-        answer["change"].push(checkextra[i]);
-    }
-  }
-  console.log(checkextra[7][1] / obj[checkextra[7][0]])
-  console.log(obj.length)
-  console.log(check)
-  console.log(sum)
-  console.log(checkextra)
-  return answer;
-}
-
-console.log(checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]));
-
-function checkCashRegister(price, cash, cid) {
-  let answer = {
-    change : []
-  };
-  let obj = {
-    "PENNY" : 0.01,
-    "NICKEL" : 0.05,
-    "DIME" : 0.1,
-    "QUARTER" : 0.25,
-    "ONE" : 1,
-    "FIVE" : 5,
-    "TEN" : 10,
-    "TWENTY" : 20
-  }
-  let difference = cash - price;
-  let check = cid.filter(eachArray => difference > obj[eachArray[0]])
-  let sum = 0;
-  for (let i = 0 ; i < check.length ; i++) {
-    sum = sum + check[i][1]
-  }
-  let checkextra = check.filter(someFunction);
-  function someFunction(eachArray){
-     if (sum > difference | eachArray[1] >= difference ) {
-          return eachArray
-   }
-  }
-   console.log(checkextra)
-  let full = 0;
-  for (let i = (checkextra.length-1) ; i >= 0; i--) {
-    let total = 0;
-    for (let j = 0 ; j < checkextra[i][1] / obj[checkextra[i][0]] ; j++) {
-      total = total + obj[checkextra[i][0]]
-      full = full + obj[checkextra[i][0]]
-      console.log(full)
-    if (total == checkextra[i][1]) {
-        answer["change"].push(checkextra[i]);
+  if (check.every(eachArray => eachArray[1] < difference && sum < difference)) {
+    answer["status"] = "INSUFFICIENT_FUNDS"
+  } else if (check.some(eachArray => eachArray[1] == difference)){
+    answer["status"] = "CLOSED";
+    answer["change"] = cid
+  } else {
+    answer["status"] = "OPEN"
+    let full = 0;
+    for (let i = (check.length-1) ; i >= 0; i--) {
+      let total = 0;
+        for (let j = 0 ; j < check[i][1] / obj[check[i][0]] ; j++) {
+      total = total + obj[check[i][0]]
+      full = full + obj[check[i][0]]
+      //console.log(full)
+        if (total == check[i][1]) {
+        answer["change"].push([check[i][0] , check[i][1] / 100]);
         break;
-      } else if (full > difference) {
-        total = total - obj[checkextra[i][0]];
-        full  = full - obj[checkextra[i][0]]
-        checkextra[i].splice(1 , 1 , total)
-        answer["change"].push(checkextra[i]);
+          } else if (full > difference) {
+        total = total - obj[check[i][0]];
+        full  = full - obj[check[i][0]]
+        if (total != 0) {
+        check[i].splice(1 , 1 , total/100)
+        answer["change"].push(check[i]);
+        }
         break;
       }
-
+    }
   }
-
   }
-  // console.log(checkextra[7][1] / obj[checkextra[7][0]])
-  // console.log(obj.length)
-   //console.log(checkextra)
-  // console.log(sum)
-   //console.log(answer["change"].push(checkextra[1]))
+  console.log(check)
+
   return answer;
 }
 
