@@ -2662,3 +2662,43 @@ function checkCashRegister(price, cash, cid) {
 }
 
 console.log(checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]));
+//Sum All Odd Fibonacci Numbers
+function sumFibs(num) {
+  let answer = 1;
+  let sum;
+  let f = 0 ;
+  let s = 1;
+  for (let i = 0 ; i < num ; i++) {
+    sum = f + s
+    if (sum % 2 != 0) {
+      if (sum <= num) {
+        answer = answer + sum
+      }
+    }
+    f = s
+    s = sum
+    i = sum
+  }
+  return answer
+}
+
+console.log(sumFibs(75025));
+//
+function sumPrimes(num) {
+  let anArray = [2,3];
+  let sum = 5;
+  for (let i = 1 ; i < num ; i++) {
+    if (i > 1 && i % 2 !== 0 && i % 3 !== 0 ) {
+      anArray.push(i)
+      if (i <= num) {
+        sum = sum + i
+      }
+    }
+  }
+   console.log(sum)
+  console.log(anArray)
+
+  return num;
+}
+
+sumPrimes(10);
