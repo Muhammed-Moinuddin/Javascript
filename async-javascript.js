@@ -21,13 +21,48 @@ function two() {
 
 one(two);
 
-let order = (start_production) => {
-    console.log("order placed, please call production")
-    start_production();
-  };
-  
-let production = () => {
-console.log("order received, start production")
+let stocks = {
+  fruits: ["mango", "apple", "strawberry", "banana"],
+  liquid: ["ice", "water"],
+  holder: ["cone", "cup", "stick"],
+  toppings: ["chocolate", "peanuts"]
 };
 
-order(production);
+let order = (fruit_name, start_production) => {
+  setTimeout(() => {
+    console.log(`${stocks.fruits[fruit_name]} was selected`);
+    start_production();
+  }, 2000);
+};
+
+let production = () => {
+  setTimeout(() => {
+    console.log("Production has started");
+
+    setTimeout(() => {
+      console.log("the fruit has been chopped");
+
+      setTimeout(() => {
+        console.log(`${stocks.liquid[1]} and ${stocks.liquid[0]} was added`);
+
+        setTimeout(() => {
+          console.log("the machine was started");
+
+          setTimeout(() => {
+            console.log(`for holder ${stocks.holder[0]} was selected`);
+
+            setTimeout(() => {
+              console.log(`for topping ${stocks.toppings[0]} was selected`);
+
+              setTimeout(() => {
+                console.log("serve ice cream");
+              }, 2000);
+            }, 3000);
+          }, 2000);
+        }, 1000);
+      }, 1000);
+    }, 2000);
+  }, 0);
+};
+
+order(0, production);
