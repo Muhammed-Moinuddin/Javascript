@@ -46,3 +46,68 @@ function findingMinNumber(array2) {
 }
 
 console.log(findingMinNumber(array2));
+
+//code for Factorial
+function factorialFunction(factorialNumber) {
+    let ans = 1;
+    for(let i = factorialNumber; i > 0 ; i--){
+        ans = ans*i
+    }
+    return ans;
+}
+
+console.log(factorialFunction(4));
+
+//otherway of factorial number using callback and making it recursive
+function secondFactorial(factorialNumber){
+    if (factorialNumber === 0 || factorialNumber === 1) {
+        return 1;
+    }
+    return factorialNumber * secondFactorial(factorialNumber - 1);
+}
+
+console.log(secondFactorial(8));
+
+// => 4 * secondFactorial(3)
+// => 4 * (3 * secondFactorial(2))
+// => 4 * (3 * (2 * secondFactorial(1)))
+// => 4 * (3 * (2 * 1))
+// => 4 * (3 * 2)
+// => 4 * 6
+// => 24
+
+//Palindrome Check
+function PalindromeChecker(word){
+    let checkingWord = '';
+    let myword = word.toLowerCase();
+    for(let i = myword.length-1; i >= 0; i--){
+        checkingWord += myword[i]
+    }
+    if (checkingWord === myword) {
+        return "Yes the word is Palindrome";
+    } else {
+        return "No, the word is not Palindrome";
+    }
+}
+console.log(PalindromeChecker("MadaM"));
+
+//Short Way
+function isPalindrome(str){
+    const reverseString = str.toLowerCase().split('').reverse().join('');
+    return str === reverseString
+}
+console.log(isPalindrome("lol"));
+
+//anotherWay
+function isPalindrome2(word){
+    let len = word.length-1;
+    for(let i = 0; i <= len; i++){ //madam
+        if(word[i] !== word[len - i]){
+            return false;
+        }
+    }
+    return true;
+}
+
+console.log(isPalindrome2("racecar")); // Output: true
+console.log(isPalindrome2("hello"));   // Output: false
