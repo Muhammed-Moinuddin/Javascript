@@ -7,7 +7,7 @@ function sum(a, b){
 console.log(sum(3,4));
 
 //finding maximum number in an array1.
-let array1 = [2,7,1,44,8,23,76,108,90,64,12];
+let array1 = [2,7,1,44,8,23,76,108,90,64,12,112];
 
 function findingMaxNumber(array1) {
     let ans = 0;
@@ -30,7 +30,17 @@ function findingMaxNumber(array1) {
 
 console.log(findingMaxNumber(array1));
 
-
+//finding max number in another way
+function MaxNumber(array1){
+    let number = array1[0];
+    for(let i = 0; i < array1.length; i++){
+        if (array1[i] > number){
+            number = array1[i];
+        }
+    }
+    return number;
+}
+console.log(MaxNumber(array1));
 //finding min number in array2
 let array2 = [23,5,43,-2,99,-8,32,67];
 function findingMinNumber(array2) {
