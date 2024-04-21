@@ -121,3 +121,42 @@ function isPalindrome2(word){
 
 console.log(isPalindrome2("racecar")); // Output: true
 console.log(isPalindrome2("hello"));   // Output: false
+
+function fizzBuzz(){
+    let fizzBuzzArray = [];
+    for(let i = 1; i <= 100; i++){
+        if( i%3 == 0 && i%5 == 0){
+            fizzBuzzArray.push(`FizzBuzz + Number:${i}`);
+        }else if (i%3 == 0) {
+            fizzBuzzArray.push(`Fizz + Number:${i}`);
+        }else if (i%5 == 0){
+            fizzBuzzArray.push(`Buzz + Number:${i}`);
+        }else{
+            fizzBuzzArray.push(i);
+        }
+    }
+    return fizzBuzzArray;
+}
+
+console.log(fizzBuzz());
+
+let oneToTenArray = [1,2,3,4,5,6,7,8,9];
+
+function matrices(array){
+    let outerArray = [];
+    let innerArray = [];
+    for(let i = 0; i < array.length; i++){
+        innerArray.push(array[i]);
+        if(innerArray.length == 2){
+            outerArray.push(innerArray);
+            innerArray = [array[i]];
+        }
+         if (i == array.length-1){
+            innerArray = [];
+            innerArray.push(array[i]);
+            outerArray.push(innerArray);
+        }
+    }
+    return outerArray;
+}
+console.log(matrices(oneToTenArray));
