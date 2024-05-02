@@ -160,3 +160,23 @@ function matrices(array){
     return outerArray;
 }
 console.log(matrices(oneToTenArray));
+
+//
+function timeConversion(s) {
+    let midday = s.substr(s.length-2, s.length-1);
+    console.log(midday);
+    if(midday === "AM"){
+        if(s.substr(0, 2) == "12"){
+            return "00" + s.substr(2, s.length-4);
+        }
+        return s.substr(0, s.length-2);
+    }else if(midday === "PM"){
+        if(s.substr(0, 2) == "12"){
+            return "12" + s.substr(2, s.length-4);
+        }
+        let mmss = s.substr(2, s.length-4);
+        let hh = parseInt(s.substr(0, 2))+12;
+        return hh+mmss;
+    }
+}
+console.log(timeConversion('11:05:45PM'));
