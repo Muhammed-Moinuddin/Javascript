@@ -1,4 +1,3 @@
-
 //sum of two numbers
 function sum(a, b){
     return a+b;
@@ -180,3 +179,46 @@ function timeConversion(s) {
     }
 }
 console.log(timeConversion('11:05:45PM'));
+
+
+//Finding Unique Integer
+function lonelyinteger(a) {
+    let matchingArray = [];
+    if(a.length === 1){
+        return a[0];
+    }
+    for(let i = 0; i < a.length; i++){
+        for(let j = i+1; j < a.length; j++){
+            if(a[i] === a[j]){
+                matchingArray.push(a[i]);
+            }
+        }   
+    }
+    return a.filter((element) => !matchingArray.includes(element))[0];
+}
+
+console.log(lonelyinteger([1,2,3,6,7,2,1,3,6]));
+
+function lonelyInteger2(a){
+    let lonely = 0;
+    for(let i = 0; i < a.length; i++){
+        lonely ^= a[i];
+    };
+    return lonely;
+}
+console.log(lonelyInteger2([1,2,3,6,7,2,1,3,6]));
+
+function flippingBits(n) {
+    
+    let bits = (n.toString(2).padStart(32, '0')).split(''); 
+    for(let i = 0; i < bits.length; i++){
+        if(bits[i] === '0'){
+            bits.splice(i,1,"1");
+        } else {
+            bits.splice(i,1,"0");
+        }
+    }
+    return parseInt(bits.join(''),2);
+}
+
+flippingBits(123456);
