@@ -222,3 +222,45 @@ function flippingBits(n) {
 }
 
 flippingBits(123456);
+
+//Diagonal Difference
+function diagonalDifference(arr){
+    let reverseArr = arr.map((item, index) => arr[arr.length-1 - index]);
+    let primaryDiagonal = 0;
+    let secondaryDiagonal = 0;
+    for(let i = 0; i < arr.length ; i++){
+        for(let j = 0; j < arr.length ; j++){
+            if(i === j){
+                primaryDiagonal += arr[i][j];
+                secondaryDiagonal += reverseArr[i][j];
+            }
+        }
+    }
+    return Math.abs(primaryDiagonal - secondaryDiagonal);
+}
+
+console.log(diagonalDifference([[1,2,3],[4,5,6],[7,8,9]]));
+
+//better
+function diagonalDifference2(arr) {
+    let n = arr.length;
+    let primaryDiagonal = 0;
+    let secondaryDiagonal = 0;
+    for (let i = 0; i < n; i++) {
+        primaryDiagonal += arr[i][i];
+        secondaryDiagonal += arr[i][n - 1 - i];
+    }
+    return Math.abs(primaryDiagonal - secondaryDiagonal);
+}
+
+console.log(diagonalDifference2([[1,2,3],[4,5,6],[7,8,9]]));
+
+//Counting Sort 1
+function countingSort(arr) {
+    // Write your code here
+    let zeroArray = new Array(100).fill(0);
+    for(let i = 0; i < arr.length; i++){
+        zeroArray[arr[i]] += 1;
+    }
+    return zeroArray;
+}
