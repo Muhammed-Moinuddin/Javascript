@@ -264,3 +264,52 @@ function countingSort(arr) {
     }
     return zeroArray;
 }
+
+//A pangram is a string that contains every letter of the alphabet. Given a sentence determine whether it is a pangram in the English alphabet. Ignore case. Return either pangram or not pangram as appropriate.
+function pangrams(s) {
+    const alphabets = {
+        A: false, B: false, C: false, D: false, E: false, F: false, G: false, H: false, I: false, J: false, K: false, L: false, M: false, N: false, O: false, P: false, Q: false, R: false, S: false, T: false, U: false, V: false, W: false, X: false, Y: false, Z: false
+    }
+    let sentence = s.toUpperCase().split(" ").join("").split("");
+    for(let i = 0; i < sentence.length; i++){
+        if(sentence[i] in alphabets){
+            alphabets[sentence[i]] = true;
+        }
+    }
+    for(const property in alphabets){
+        if(alphabets[property] === false){
+            return "not pangram"
+        }
+    }
+    return "pangram";
+}
+
+console.log(pangrams("We promptly judged antique ivory buckles for the next prize"));
+
+//Better way
+function pangram2(s){
+    let alphabets = "abcdefghijklmnopqrstuvwxyz";
+    let sentence = s.toLowerCase();
+    for(let character of alphabets){
+        if(!sentence.includes(character)){
+            return "not pangram";
+        }
+    }
+    return "pangram";
+}
+
+console.log(pangram2("We promptly judged antique ivory buckles for the next prize"));
+
+//Permuting Two Arrays
+function twoArrays(k, A, B) {
+    A.sort((a, b) => a - b);
+    B.sort((a, b) => b - a); 
+    for(let i = 0; i < A.length; i++) {
+        if(A[i] + B[i] < k) {
+            return "NO";
+        }
+    }
+    return "YES";
+}
+
+//Subarray Division 1
