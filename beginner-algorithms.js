@@ -313,3 +313,30 @@ function twoArrays(k, A, B) {
 }
 
 //Subarray Division 1
+function birthday(s, d, m) {
+    // Write your code here
+    let segments = 0;
+    let sum = 0;
+    for(let i = 0; i < s.length; i++){
+        for(let j = i; j < m+i; j++){
+            sum = sum + s[j]
+        }
+        if(sum == d){
+            segments = segments + 1;
+            sum = 0;
+        } else {
+            sum = 0;
+        }
+    }
+    return segments;
+}
+//XOR string
+let ans = "";
+for(let i = 0; i < input.split("\n")[0].length; i++){
+    if(input.split("\n")[0][i] == input.split("\n")[1][i]) {
+        ans += 0;
+    } else {
+        ans += 1;
+    }
+}
+console.log(ans);
