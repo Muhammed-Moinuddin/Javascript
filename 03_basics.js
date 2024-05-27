@@ -43,3 +43,5 @@ console.log(person.myFunction().firstName);
 ((myName) => {
     console.log(myName);
 })("Moinuddin here");
+
+console.log("Checking signature stuff")
